@@ -37,7 +37,7 @@ Config {
     , "--normal"   , "#ffc107"
     , "--high"     , "#ad1457"
     ] 10
-    , Run Date "%a %b %_d %H:%M:%S" "date" 10
+    , Run Date "%a %b %_d, %H:%M:%S" "date" 10
     , Run Battery        [ "--template" , "Batt: <acstatus>"
     , "--Low"      , "10"
     , "--High"     , "80"

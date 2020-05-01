@@ -4,7 +4,7 @@ XMOBAR	:= ~/.xmonad/xmobar.hs
 XSESSION:= ~/.xsession
 KITTY	:= ~/.config/kitty/kitty.conf
 
-TARGETS	= $(BASHRC) $(XMONAD) $(XSESSION) $(KITTY)
+TARGETS	= $(BASHRC) $(XMONAD) $(XSESSION) $(KITTY) $(XMOBAR)
 
 ABSPATH	:= $(realpath .)
 

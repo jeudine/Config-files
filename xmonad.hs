@@ -42,7 +42,7 @@ myFocusFollowsMouse = True
 
 -- Width of the window border in pixels.
 
-myBorderWidth   = 1
+myBorderWidth   = 0
 
 
 -- NOTE: from 0.9.1 on numlock mask is set automatically. The numlockMask
@@ -78,11 +78,6 @@ myBorderWidth   = 1
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 
 myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
-
--- Border colors for unfocused and focused windows, respectively.
-
-myNormalBorderColor  = "#dddddd"
-myFocusedBorderColor = "#ff0000"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -284,8 +279,6 @@ main = do
         , focusFollowsMouse  = myFocusFollowsMouse
         , borderWidth        = myBorderWidth
         , workspaces         = myWorkspaces
-        , normalBorderColor  = myNormalBorderColor
-        , focusedBorderColor = myFocusedBorderColor
         , mouseBindings      = myMouseBindings
         , layoutHook         = avoidStruts myLayout
         , manageHook         = manageDocks <+> myManageHook
@@ -297,19 +290,6 @@ main = do
             , ppSep = "   "
             }
             , startupHook        = myStartupHook }
-
-        ------------------------------------------------------------------------
-        -- Status bars and logging
-
--- Perform an arbitrary action on each internal state change or X event.
-    -- See the 'XMonad.Hooks.DynamicLog' extension for examples.
-        --
-        --
-        -- * NOTE: EwmhDesktops users should use the 'ewmh' function from
-        -- XMonad.Hooks.EwmhDesktops to modify their defaultConfig as a whole.
-            -- It will add EWMH logHook actions to your custom log hook by
-            -- combining it with ewmhDesktopsLogHook.
-                --
 
 -- Color of current window title in xmobar
 xmobarTitleColor = "#26a69a"

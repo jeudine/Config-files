@@ -78,6 +78,8 @@ alias l='ls -CF'
 alias e='nvim'
 alias sudo='sudo '
 alias d='feh -F'
+alias "c=xclip -selection clipboard"
+alias "v=xclip -selection clipboard -o"
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
