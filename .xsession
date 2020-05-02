@@ -1,2 +1,2 @@
-feh --bg-scale ~/Images/wallpaper.png &
+feh --bg-fill ~/Images/wallpaper.jpg &
 xmonad

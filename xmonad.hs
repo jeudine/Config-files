@@ -230,6 +230,7 @@ myLayout = mkToggle  (single NBFULL) tiled where tiled   = Tall nmaster delta ra
 myManageHook = composeAll $
     [ className =? "MPlayer"        --> doFloat
     , className =? "Gimp"           --> doFloat
+    , resource  =? "pavucontrol"    --> doFloat
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore ]
 

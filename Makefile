@@ -3,8 +3,9 @@ XMONAD	:= ~/.xmonad/xmonad.hs
 XMOBAR	:= ~/.xmonad/xmobar.hs
 XSESSION:= ~/.xsession
 KITTY	:= ~/.config/kitty/kitty.conf
+NEOVIM	:= ~/.config/nvim
 
-TARGETS	= $(BASHRC) $(XMONAD) $(XSESSION) $(KITTY) $(XMOBAR)
+TARGETS	= $(BASHRC) $(XMONAD) $(XSESSION) $(KITTY) $(XMOBAR) $(NEOVIM)
 
 ABSPATH	:= $(realpath .)
 
