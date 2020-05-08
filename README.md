@@ -11,6 +11,7 @@ A backup of my different configuration files.
 - [Xmonad](https://xmonad.org/)
 - [Xmobar](https://xmobar.org/)
 - [Xsession](https://wiki.debian.org/Xsession)
+- [GTK](https://www.gtk.org/)
 
 ## Installation
 
@@ -18,6 +19,11 @@ A backup of my different configuration files.
 Install [FiraCode](https://github.com/tonsky/FiraCode).
 ```bash
 sudo apt install fonts-firacode
+```
+
+### GTK Arc Theme
+```bash
+sudo apt install arc-theme
 ```
 
 ### Neovim plugins
@@ -38,6 +44,11 @@ Modify `.xsession` to indicate the path of your wallpaper.
 Use [Cabal](https://www.haskell.org/cabal/) with the right flag.
 ```bash
 cabal install xmobar --flags="with_xft"
+```
+
+### Xmonad
+```bash
+sudo apt install xmonad
 ```
 
 ### Configuration files

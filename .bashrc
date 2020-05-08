@@ -69,7 +69,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # colored GCC warnings and errors
-export GCC_COLORS='error=01;35:warning=01;31:note=01;36:caret=01;32:locus=01:quote=01'
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
 alias ll='ls -lh'
@@ -80,6 +80,7 @@ alias sudo='sudo '
 alias d='feh -F'
 alias "c=xclip -selection clipboard"
 alias "v=xclip -selection clipboard -o"
+alias sdn='sudo shutdown now'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

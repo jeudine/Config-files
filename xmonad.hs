@@ -2,7 +2,7 @@
 -- xmonad example config file for xmonad-0.9
 --
 -- A template showing all available configuration hooks,
--- and how to override the defaults in your own xmonad.hs conf file
+-- and how to override the defaults in your own xmonad.hs conf file.
 --
 -- Normally, you'd only override those defaults you care about
 --
@@ -46,14 +46,14 @@ myBorderWidth   = 0
 
 
 -- NOTE: from 0.9.1 on numlock mask is set automatically. The numlockMask
--- setting should be removed from configs
+-- setting should be removed from configs.
 --
 -- You can safely remove this even on earlier xmonad versions unless you
--- need to set it to something other than the default mod2Mask, (e.g. OSX)
+-- need to set it to something other than the default mod2Mask, (e.g. OSX).
 --
 -- The mask for the numlock key. Numlock status is "masked" from the
 -- current modifier status, so the keybindings will work with numlock on or
--- off. You may need to change this on some systems
+-- off. You may need to change this on some systems.
 --
 -- You can find the numlock modifier by running "xmodmap" and looking for a
 -- modifier with Num_Lock bound to it:
@@ -62,7 +62,7 @@ myBorderWidth   = 0
 -- > mod2        Num_Lock (0x4d)
 --
 -- Set numlockMask = 0 if you don't have a numlock key, or want to treat
--- numlock status separately
+-- numlock status separately.
 --
 -- myNumlockMask   = mod2Mask -- deprecated in xmonad-0.9.1
 ------------------------------------------------------------
@@ -71,7 +71,7 @@ myBorderWidth   = 0
 -- The default number of workspaces (virtual screens) and their names
 -- By default we use numeric strings, but any string may be used as a
 -- workspace name. The number of workspaces is determined by the length
--- of this list
+-- of this list.
 --
 -- A tagging example:
 --
@@ -109,9 +109,6 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
       , ((modm,               xK_n     ), refresh)
 
     -- Move focus to the next window
-      , ((modm,               xK_Tab   ), windows W.focusDown)
-
-    -- Move focus to the next window
       , ((modm,               xK_j     ), windows W.focusDown)
 
     -- Move focus to the previous window
@@ -130,10 +127,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
       , ((modm .|. shiftMask, xK_k     ), windows W.swapUp    )
 
     -- Shrink the master area
-      , ((modm,               xK_h     ), sendMessage Shrink) -- à revoir
+      , ((modm,               xK_h     ), sendMessage Shrink)
 
     -- Expand the master area
-      , ((modm,               xK_l     ), sendMessage Expand) --à revoir
+      , ((modm,               xK_l     ), sendMessage Expand)
 
     -- Push window back into tiling
       , ((modm,               xK_t     ), withFocused $ windows . W.sink)
@@ -173,7 +170,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
 
 ------------------------------------------------------------------------
--- Mouse bindings: default actions bound to mouse events
+    -- Mouse bindings: default actions bound to mouse events
 
 myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 
@@ -192,7 +189,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
     ]
 
 ------------------------------------------------------------------------
--- Layouts:
+    -- Layouts:
 
 -- You can specify and transform your layouts by modifying these values
 -- If you change layout bindings be sure to use 'mod-shift-space' after
@@ -221,36 +218,36 @@ myLayout = mkToggle  (single NBFULL) tiled where tiled   = Tall nmaster delta ra
 -- a new window. You can use this to, for example, always float a
 -- particular program, or have a client always appear on a particular
 -- workspace.
-    -- To find the property name associated with a program, use
-    -- > xprop | grep WM_CLASS
-    -- and click on the client you're interested in.
-        -- To match on the WM_NAME, you can use 'title' in the same way that
-        -- 'className' and 'resource' are used below.
+-- To find the property name associated with a program, use
+-- > xprop | grep WM_CLASS
+-- and click on the client you're interested in.
+-- To match on the WM_NAME, you can use 'title' in the same way that
+-- 'className' and 'resource' are used below.
 
 myManageHook = composeAll $
     [ className =? "MPlayer"        --> doFloat
-      , className =? "Gimp"           --> doFloat
-      , resource  =? "pavucontrol"    --> doFloat
-      , resource  =? "desktop_window" --> doIgnore
-      , resource  =? "kdesktop"       --> doIgnore ]
+    , className =? "Gimp"           --> doFloat
+    , resource  =? "pavucontrol"    --> doFloat
+    , resource  =? "desktop_window" --> doIgnore
+    , resource  =? "kdesktop"       --> doIgnore ]
 
 ------------------------------------------------------------------------
     -- Event handling
 
 -- Defines a custom handler function for X Events. The function should
 -- return (All True) if the default handler is to be run afterwards. To
-                        -- combine event hooks use mappend or mconcat from Data.Monoid
-                        --
-                        -- * NOTE: EwmhDesktops users should use the 'ewmh' function from
-                        -- XMonad.Hooks.EwmhDesktops to modify their defaultConfig as a whole.
-                            -- It will add EWMH event handling to your custom event hooks by
-                            -- combining them with ewmhDesktopsEventHook.
-                                --
+-- combine event hooks use mappend or mconcat from Data.Monoid.
+--
+-- * NOTE: EwmhDesktops users should use the 'ewmh' function from
+-- XMonad.Hooks.EwmhDesktops to modify their defaultConfig as a whole.
+-- It will add EWMH event handling to your custom event hooks by
+-- combining them with ewmhDesktopsEventHook.
+--
 
 myEventHook = mempty
 
 ------------------------------------------------------------------------
--- Startup hook
+    -- Startup hook
 
 -- Perform an arbitrary action each time xmonad starts or is restarted
 -- with mod-q.  Used by, e.g., XMonad.Layout.PerWorkspace to initialize
@@ -267,7 +264,7 @@ myEventHook = mempty
 myStartupHook = return ()
 
 ------------------------------------------------------------------------
--- Now run xmonad with all the defaults we set up
+    -- Now run xmonad with all the defaults we set up
 
 main = do
     xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar.hs"
@@ -288,7 +285,7 @@ main = do
               , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor ""
               , ppSep = "   "
                                                              }
-              , startupHook        = myStartupHook }
+                                                               , startupHook        = myStartupHook }
 
 -- Color of current window title in xmobar
 xmobarTitleColor = "#26a69a"
