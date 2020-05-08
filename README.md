@@ -41,9 +41,10 @@ sudo apt install feh
 Modify `.xsession` to indicate the path of your wallpaper.
 
 ### Xmobar
-Use [Cabal](https://www.haskell.org/cabal/) with the right flag.
+Use [Cabal](https://www.haskell.org/cabal/) with the right flag and create a SymLink.
 ```bash
 cabal install xmobar --flags="with_xft"
+sudo ln -s ~/.cabal/bin/xmobar /usr/bin/
 ```
 
 ### Xmonad
