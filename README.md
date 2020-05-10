@@ -6,7 +6,7 @@ A backup of my different configuration files.
 - [Bash](https://www.gnu.org/software/bash/)
 - [Kitty](https://sw.kovidgoyal.net/kitty/)
 - [Neovim](https://neovim.io/)
-- [Rofi](https://github.com/davatorium/rofi) (WIP)
+- [Rofi](https://github.com/davatorium/rofi)
 - [Xdm](https://www.x.org/releases/X11R7.6/doc/man/man1/xdm.1.xhtml) (WIP)
 - [Xmonad](https://xmonad.org/)
 - [Xmobar](https://xmobar.org/)
@@ -42,12 +42,17 @@ Modify `.xsession` to indicate the path of your wallpaper.
 
 ### Xmobar
 ```bash
-apt install xmobar
+sudo apt install xmobar
 ```
 
 ### Xmonad
 ```bash
 sudo apt install xmonad
+```
+
+### Xorg
+```bash
+sudo apt install xorg
 ```
 
 ### Configuration files

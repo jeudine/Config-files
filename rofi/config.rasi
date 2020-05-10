@@ -1,41 +1,39 @@
-/* ROFI config file */
+/* ROFI configuration file */
 
 * {
-  black:      #000000;
-  red:        #eb6e67;
-  green:      #95ee8f;
-  yellow:     #f8c456;
-  blue:       #6eaafb;
-  mangenta:   #d886f3;
-  cyan:       #6cdcf7;
-  emphasis:   #50536b;
-  text:       #dfdfdf;
-  text-alt:   #b2b2b2;
-  fg:         #abb2bf;
-  bg:         #282c34;
+  black:      #263238;
+  red:        #ff9800;
+  green:      #8bc34a;
+  yellow:     #ffc107;
+  blue:       #03a9f4;
+  mangenta:   #e91e63;
+  cyan:       #009688;
+  emphasis:   #37474f;
+  text:       #eceff1;
+  text-alt:   #cfd8dc;
+  fg:         #eceff1;
+  bg:         #263238;
 
   spacing: 0;
-  background-color: transparent;
+  background-color: @bg;
 
-  font: "firacode Font 14";
+  font: "firacode 14";
   text-color: @text;
 }
 
 window {
-  transparency: "real";
-  fullscreen: true;
-  //background-color: #282c34dd;
+  fullscreen: false;
+  border: 5px;
+  border-color: @yellow;
 }
 
 mainbox {
-  padding: 30% 30%;
+  padding: 1%;
 }
-
 inputbar {
   margin: 0px 0px 20px 0px;
   children: [prompt, textbox-prompt-colon, entry, case-indicator];
 }
-
 prompt {
   text-color: @blue;
 }
@@ -51,7 +49,7 @@ entry {
 }
 
 listview {
-  spacing: 5px;
+  spacing: 0px;
   dynamic: true;
   scrollbar: false;
 }
