@@ -1,5 +1,5 @@
 Config {
-    font = "xft:Firacode Mono-12"
+    font = "xft:Firacode-Medium  Mono:size=14:antialias=true"
        , additionalFonts = []
        , borderColor = "#263238"
        , border = TopB

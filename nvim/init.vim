@@ -15,7 +15,6 @@ set expandtab
 set softtabstop=4
 set list
 set listchars=tab:>-,trail:~
-set nu
 set noshowmode
 let g:lightline = {
       \ 'colorscheme': 'wombat',
