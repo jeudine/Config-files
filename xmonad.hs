@@ -28,12 +28,14 @@ import XMonad.Util.Run(spawnPipe)
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 
---Layouts
+-- Layouts
 import XMonad.Layout
 import XMonad.Layout.MultiToggle
 import XMonad.Layout.MultiToggle.Instances
 
+-- Keyboard
 import XMonad.Config.Azerty
+import XMonad.Util.EZConfig(additionalKeys, additionalKeysP)
 
 -- Whether focus follows the mouse pointer.
 
@@ -226,10 +228,10 @@ myLayout = mkToggle  (single NBFULL) tiled where tiled   = Tall nmaster delta ra
 
 myManageHook = composeAll $
     [ className =? "MPlayer"        --> doFloat
-    , className =? "Gimp"           --> doFloat
-    , resource  =? "pavucontrol"    --> doFloat
-    , resource  =? "desktop_window" --> doIgnore
-    , resource  =? "kdesktop"       --> doIgnore ]
+      , className =? "Gimp"           --> doFloat
+      , resource  =? "pavucontrol"    --> doFloat
+      , resource  =? "desktop_window" --> doIgnore
+      , resource  =? "kdesktop"       --> doIgnore ]
 
 ------------------------------------------------------------------------
     -- Event handling
@@ -270,22 +272,22 @@ main = do
     xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar.hs"
     xmonad $ def {
         terminal             = "kitty"
-          , modMask            = mod4Mask
-          , keys               =  azertyKeys <+> myKeys
-          , focusFollowsMouse  = myFocusFollowsMouse
-          , borderWidth        = myBorderWidth
-          , workspaces         = myWorkspaces
-          , mouseBindings      = myMouseBindings
-          , layoutHook         = avoidStruts myLayout
-          , manageHook         = manageDocks <+> myManageHook
-          , handleEventHook    = myEventHook <+> docksEventHook
-          , logHook            = dynamicLogWithPP $ xmobarPP {
-            ppOutput = hPutStrLn xmproc
-              , ppTitle = xmobarColor xmobarTitleColor "" . shorten 70
-              , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor ""
-              , ppSep = "   "
-                                                             }
-                                                               , startupHook        = myStartupHook }
+                 , modMask            = mod4Mask
+                 , keys               =  azertyKeys <+> myKeys
+                 , focusFollowsMouse  = myFocusFollowsMouse
+                 , borderWidth        = myBorderWidth
+                 , workspaces         = myWorkspaces
+                 , mouseBindings      = myMouseBindings
+                 , layoutHook         = avoidStruts myLayout
+                 , manageHook         = manageDocks <+> myManageHook
+                 , handleEventHook    = myEventHook <+> docksEventHook
+                 , logHook            = dynamicLogWithPP $ xmobarPP { ppOutput = hPutStrLn xmproc
+                                                                    , ppTitle = xmobarColor xmobarTitleColor "" . shorten 70
+                                                                    , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor ""
+                                                                    , ppSep = "   " }
+                 , startupHook        = myStartupHook } `additionalKeysP` [ ("<XF86AudioRaiseVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +1.5%")
+                                                                          , ("<XF86AudioLowerVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@  -1.5%")
+                                                                          , ("<XF86AudioMute>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle") ]
 
 -- Color of current window title in xmobar
 xmobarTitleColor = "#26a69a"

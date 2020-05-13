@@ -57,7 +57,7 @@ listview {
 element {
   padding: 5px;
   text-color: @text-alt;
-  highlight: bold #95ee8f; /* green */
+  highlight: bold #8bc34a; /* green */
   border-radius: 3px;
 }
 
