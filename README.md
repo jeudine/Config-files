@@ -63,3 +63,5 @@ cd Config-files
 make clean
 make install
 ```
+## License
+Public domain.
