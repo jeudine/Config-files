@@ -20,7 +20,10 @@ sudo ifup wlxa00460111568
 
 === An example of `/etc/network/interfaces`
 
+[source,]
+----
 include::interfaces[]
+----
 
 == wpa_supplicant service
 
