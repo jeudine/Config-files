@@ -1,0 +1,19 @@
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+allow-hotplug wlxa00460111568
+iface wlxa00460111568 inet manual
+	wpa-driver wext
+	wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
+
+# no id_str 'default' is used as the fallback mapping target
+iface default inet dhcp
+
+# id_str="home"
+iface home inet dhcp
