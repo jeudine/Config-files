@@ -14,6 +14,7 @@
 --
 -- http://www.haskell.org/haskellwiki/Xmonad/Notable_changes_since_0.8
 --
+--Modified: Julien Eudine
 
 import XMonad
 import Data.Monoid
@@ -287,7 +288,14 @@ main = do
                                                                     , ppSep = "   " }
                  , startupHook        = myStartupHook } `additionalKeysP` [ ("<XF86AudioRaiseVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +1.5%")
                                                                           , ("<XF86AudioLowerVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@  -1.5%")
-                                                                          , ("<XF86AudioMute>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle") ]
+                                                                          , ("<XF86AudioMute>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
+
+                                                                          , ("<XF86AudioPlay>", spawn "playerctl play-pause")
+                                                                          , ("<XF86AudioPrev>", spawn "playerctl previous")
+                                                                          , ("<XF86AudioNext>", spawn "playerctl next")
+
+                                                                          , ("<XF86MonBrightnessUp>", spawn "lux -a 5%")
+                                                                          , ("<XF86MonBrightnessDown>", spawn "lux -s 5%") ]
 
 -- Color of current window title in xmobar
 xmobarTitleColor = "#26a69a"
