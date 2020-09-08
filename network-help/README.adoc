@@ -93,7 +93,7 @@ To save the config, run:
 
 [source, shell]
 ----
-> save config
+> save_config
 ----
 
 == External sources
