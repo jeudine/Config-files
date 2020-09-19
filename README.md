@@ -55,6 +55,12 @@ sudo apt install xmonad
 sudo apt install xorg
 ```
 
+### Network
+Install Network manager and use `nmtui` or `nmcli`.
+```bash
+sudo apt install network-manager
+```
+
 ### Configuration files
 Use the following command to install the configuration files. Before, make sure you don't want to keep your current config files.
 ```bash
