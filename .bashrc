@@ -35,7 +35,7 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-if [ "$TERM" == "xterm-kitty" ]
+if [ "$TERM" == "xterm-256color" ]
 then
     color_prompt=yes
 fi
@@ -93,3 +93,4 @@ if ! shopt -oq posix; then
   fi
 fi
 export XDG_CONFIG_HOME="$HOME/.config"
+export PATH=$PATH:~/.cargo/bin

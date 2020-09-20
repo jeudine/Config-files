@@ -1,16 +1,21 @@
+CONF		:= ~/.config
+XMONAD_D	:= ~/.xmonad
 BASHRC		:= ~/.bashrc
-XMONAD		:= ~/.xmonad/xmonad.hs
-XMOBAR		:= ~/.xmonad/xmobar.hs
+XMONAD		:= $(XMONAD_D)/xmonad.hs
+XMOBAR		:= $(XMONAD_D)/xmobar.hs
 XSESSION	:= ~/.xsession
-NEOVIM		:= ~/.config/nvim
-ROFI		:= ~/.config/rofi
+NEOVIM		:= $(CONF)/nvim
+ALACRITTY_C	:= $(CONF)/alacritty
+ROFI		:= $(CONF)/rofi
 GTK2		:= ~/.gtkrc-2.0
-GTK3		:= ~/.config/gtk-3.0
+GTK3		:= $(CONF)/gtk-3.0
 ALACRITTY	:= ~/.cargo/bin/alacritty
 CARGO		:= ~/.cargo/bin/cargo
 RM	:= rm -fr
 
-TARGETS	= $(BASHRC) $(XMONAD) $(XSESSION) $(XMOBAR) $(NEOVIM) $(ROFI) $(GTK2) $(GTK3)
+TARGETS	= $(BASHRC) $(XMONAD) $(XSESSION) $(XMOBAR) $(NEOVIM) $(ROFI) $(GTK2) $(GTK3) $(ALACRITTY_C)
+
+DIR	= $(CONF) $(XMONAD_D)
 
 ABSPATH	:= $(realpath .)
 
@@ -27,9 +32,11 @@ $CARGO):
 clean:
 	$(RM) $(TARGETS)
 
-$(TARGETS):
+$(TARGETS): | $(DIR)
 	FILE="$(shell echo $@ | rev | cut -d '/' -f 1 | rev)";\
 	ln -sv $(ABSPATH)/$$FILE $@
 
+$(DIR):
+	mkdir -p $@
 
 .PHONY: install clean
