@@ -272,7 +272,7 @@ myStartupHook = return ()
 main = do
     xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar.hs"
     xmonad $ def {
-        terminal             = "./.cargo/bin/alacritty"
+        terminal             = "~/.cargo/bin/alacritty"
                  , modMask            = mod4Mask
                  , keys               =  azertyKeys <+> myKeys
                  , focusFollowsMouse  = myFocusFollowsMouse
