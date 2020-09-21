@@ -1,2 +1,2 @@
-feh --bg-fill ~/Images/wallpaper.jpg &
+feh --bg-fill ~/Images/wallpaper.png &
 xmonad

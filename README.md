@@ -62,6 +62,13 @@ sudo apt install network-manager
 ```
 For [eduroam](https://www.eduroam.org/) use the [eduroam Configuration Assistant Tool](https://cat.eduroam.org/).
 
+### Keyboard layout
+
+Run
+```bash
+ibus-setup
+```
+
 ### Configuration files
 Use the following command to install the configuration files. Before, make sure you don't want to keep your current config files.
 ```bash
