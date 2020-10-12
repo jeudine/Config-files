@@ -19,8 +19,10 @@ DIR	= $(CONF) $(XMONAD_D)
 
 ABSPATH	:= $(realpath .)
 
-install: $(TARGETS) $(ALACRITTY)
+install:
 	sudo apt install xorg xmonad xmobar network-manager feh arc-theme fonts-firacode xdm neovim rofi curl git
+	make $(TARGETS)
+	make $(ALACRITTY)
 
 $(ALACRITTY): $(CARGO)
 	sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev python3
