@@ -4,7 +4,7 @@ A backup of my different configuration files.
 ## Software
 
 - [Bash](https://www.gnu.org/software/bash/)
-- [Kitty](https://sw.kovidgoyal.net/kitty/)
+- [Alacritty](https://github.com/alacritty/alacritty)
 - [Neovim](https://neovim.io/)
 - [Rofi](https://github.com/davatorium/rofi)
 - [Xdm](https://www.x.org/releases/X11R7.6/doc/man/man1/xdm.1.xhtml) (WIP)
