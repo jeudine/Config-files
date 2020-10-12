@@ -286,8 +286,8 @@ main = do
                                                                     , ppTitle = xmobarColor xmobarTitleColor "" . shorten 70
                                                                     , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor ""
                                                                     , ppSep = "   " }
-                 , startupHook        = myStartupHook } `additionalKeysP` [ ("<XF86AudioRaiseVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +1.5%")
-                                                                          , ("<XF86AudioLowerVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@  -1.5%")
+                 , startupHook        = myStartupHook } `additionalKeysP` [ ("<XF86AudioRaiseVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +2%")
+                                                                          , ("<XF86AudioLowerVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@  -2%")
                                                                           , ("<XF86AudioMute>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
 
                                                                           , ("<XF86AudioPlay>", spawn "playerctl play-pause")
