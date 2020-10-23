@@ -301,4 +301,4 @@ main = do
 xmobarTitleColor = "#1BA6FA"
 
 -- Color of current workspace in xmobar
-xmobarCurrentWorkspaceColor = "#FFC620"
+xmobarCurrentWorkspaceColor = "#FF301B"
