@@ -298,7 +298,7 @@ main = do
                                                                           , ("<XF86MonBrightnessDown>", spawn "lux -s 5%") ]
 
 -- Color of current window title in xmobar
-xmobarTitleColor = "#26a69a"
+xmobarTitleColor = "#1BA6FA"
 
 -- Color of current workspace in xmobar
-xmobarCurrentWorkspaceColor = "#ffc107"
+xmobarCurrentWorkspaceColor = "#FFC620"
