@@ -46,8 +46,8 @@ Config {
                                          , "--high"     , "#1BA6FA"
                                          , "--"
                                          , "-o"	, "<left>% (<timeleft>)"
-                                         , "-O"	, "<fc=#ffc107>Charging</fc>"
-                                         , "-i"	, "<fc=#8bc34a>Charged</fc>"
+                                         , "-O"	, "<fc=#8763B8>Charging</fc>"
+                                         , "-i"	, "<fc=#1BA6FA>Charged</fc>"
                                          ] 50
                                          , Run StdinReader
                     ]

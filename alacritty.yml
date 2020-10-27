@@ -54,3 +54,16 @@ colors:
 
 key_bindings:
   - { key: Return,   mods: Control, action: SpawnNewInstance }
+
+
+mouse:
+    hide_when_typing: true
+    url:
+        launcher:
+            program: firefox
+            args: []
+            modifiers: None
+
+cursor:
+    style: Beam
+    vi_mode_style: Block
