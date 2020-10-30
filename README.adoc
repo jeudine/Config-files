@@ -1,0 +1,34 @@
+= Config-files
+
+A backup of my different configuration files and a way to easily and quickly install my work environment on Debian-based distributions.
+
+== Targeted software
+
+* https://github.com/alacritty/alacritty[Alacritty]
+* https://www.gnu.org/software/bash/[Bash]
+* https://www.gtk.org/[GTK]
+* https://neovim.io/[Neovim]
+* https://github.com/davatorium/rofi[Rofi]
+* https://xmobar.org/[Xmobar]
+* https://xmonad.org/[Xmonad]
+* https://wiki.debian.org/Xsession[Xsession]
+
+== Installation
+
+To install my work environement run the following command in the root folder of the repository. Before, make sure you don't want to keep your current configuration files.
+[source, shell]
+----
+make install
+----
+
+== Misc.
+
+* To add a usb group in Debian run  the `usb_group_debian.sh` script as the superuser.
+* Modify the first line of `.xsession` to indicate the path of your wallpaper.
+* To connect to a Wi-Fi network use `nmtui` or `nmcli`. For https://www.eduroam.org/[eduroam] use the https://cat.eduroam.org/[eduroam Configuration Assistant Tool]
+* To change the keyboard layout run `ibus-setup`.
+* Take a look at `monitors-help.adoc` to modify the settings of your monitors.
+
+== License
+
+Public domain.
