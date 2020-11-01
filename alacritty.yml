@@ -1,6 +1,7 @@
 # Font configuration (changes require restart)
 env:
   WINIT_X11_SCALE_FACTOR: "1.0"
+  decorations: none
 
 font:
   size: 14
@@ -51,10 +52,8 @@ colors:
     cyan:    '0x73FBF1'
     white:   '0xFEFEF8'
 
-
 key_bindings:
   - { key: Return,   mods: Control, action: SpawnNewInstance }
-
 
 mouse:
     hide_when_typing: true
@@ -67,3 +66,4 @@ mouse:
 cursor:
     style: Beam
     vi_mode_style: Block
+

@@ -1,24 +1,24 @@
 /* ROFI configuration file */
 
 * {
-  black:      #263238;
-  red:        #ff9800;
-  green:      #8bc34a;
-  yellow:     #ffc107;
-  blue:       #03a9f4;
-  mangenta:   #e91e63;
-  cyan:       #009688;
-  emphasis:   #37474f;
-  text:       #eceff1;
-  text-alt:   #cfd8dc;
-  fg:         #eceff1;
-  bg:         #263238;
+  black:      #0d0d0d;
+  red:        #FF301B;
+  green:      #A0E521;
+  yellow:     #FFC620;
+  blue:       #1BA6FA;
+  mangenta:   #8763B8;
+  cyan:       #21DEEF;
+  emphasis:   #6D7070;
+  text:       #292C3E;
+  text-alt:   #EBEBEB;
+  fg:         #EBEBEB;
+  bg:         #292C3E;
 
   spacing: 0;
   background-color: @bg;
 
   font: "firacode 14";
-  text-color: @text;
+  text-color: @fg;
 }
 
 window {
