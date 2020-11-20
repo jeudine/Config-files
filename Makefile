@@ -11,13 +11,14 @@ GTK2		:= ~/.gtkrc-2.0
 GTK3		:= $(CONF)/gtk-3.0
 ALACRITTY	:= ~/.cargo/bin/alacritty
 CARGO		:= ~/.cargo/bin/cargo
+REDSHIFT	:= $(CONF)/redshift.conf
 
 LIGHTLINE	:= ~/.local/share/nvim/site/pack/lightline/start/lightline/
 FUGITIVE	:= ~/.local/share/nvim/site/pack/tpope/start/fugitive/
 
 RM	:= rm -fr
 
-TARGETS	= $(BASHRC) $(XMONAD) $(XSESSION) $(XMOBAR) $(NEOVIM) $(ROFI) $(GTK2) $(GTK3) $(ALACRITTY_C)
+TARGETS	= $(BASHRC) $(XMONAD) $(XSESSION) $(XMOBAR) $(NEOVIM) $(ROFI) $(GTK2) $(GTK3) $(ALACRITTY_C) $(REDSHIFT)
 
 NVIM_P	= $(LIGHTLINE) $(FUGITIVE)
 
@@ -26,7 +27,7 @@ DIR	= $(CONF) $(XMONAD_D)
 ABSPATH	:= $(realpath .)
 
 install:
-	sudo apt install xorg xmonad xmobar network-manager feh arc-theme fonts-firacode xdm neovim rofi curl git network-manager
+	sudo apt install xorg xmonad xmobar network-manager feh arc-theme fonts-firacode xdm neovim rofi curl git network-manager redshift
 	make clean
 	make $(TARGETS)
 	make $(NVIM_P)

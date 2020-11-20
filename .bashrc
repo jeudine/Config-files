@@ -81,6 +81,7 @@ alias d='feh -FZx'
 alias "c=xclip -selection clipboard"
 alias "v=xclip -selection clipboard -o"
 alias sdn='sudo shutdown now'
+alias python=python3
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

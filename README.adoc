@@ -8,6 +8,7 @@ A backup of my different configuration files and a way to easily and quickly in
 * https://www.gnu.org/software/bash/[Bash]
 * https://www.gtk.org/[GTK]
 * https://neovim.io/[Neovim]
+* http://jonls.dk/redshift/[Redshift]
 * https://github.com/davatorium/rofi[Rofi]
 * https://xmobar.org/[Xmobar]
 * https://xmonad.org/[Xmonad]

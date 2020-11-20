@@ -1,2 +1,2 @@
-feh --bg-fill ~/Images/wallpaper.png &
+feh --bg-fill ~/Images/wallpaper.png & redshift &
 xmonad
