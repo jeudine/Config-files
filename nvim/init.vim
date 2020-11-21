@@ -29,3 +29,5 @@ let g:lightline = {
       \   'gitbranch': 'FugitiveHead'
       \ },
       \ }
+
+autocmd FileType asciidoc setlocal spell
