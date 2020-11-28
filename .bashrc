@@ -41,7 +41,7 @@ then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;33m\]ッ\[\033[00m\]'
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;33m\]ツ\[\033[00m\]'
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
