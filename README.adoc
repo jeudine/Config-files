@@ -16,10 +16,18 @@ A backup of my different configuration files and a way to easily and quickly in
 
 == Installation
 
-To install my work environement run the following command in the root folder of the repository. Before, make sure you don't want to keep your current configuration files.
+To install my work environment run the following command in the root folder of the repository. Before, make sure you don't want to keep your current configuration files.
 [source, shell]
 ----
 make install
+----
+
+== Update
+
+To update all the installed packages, you can run the following command.
+[source, shell]
+----
+update
 ----
 
 == Misc.

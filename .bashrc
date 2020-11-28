@@ -41,7 +41,7 @@ then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;33m\]aFistfulOf\[\033[00m\]$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;33m\]ッ\[\033[00m\]'
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -82,6 +82,7 @@ alias "c=xclip -selection clipboard"
 alias "v=xclip -selection clipboard -o"
 alias sdn='sudo shutdown now'
 alias python=python3
+alias update='sudo apt update && sudo apt upgrade && rustup update stable && cargo install-update -a'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

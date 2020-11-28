@@ -31,3 +31,7 @@ let g:lightline = {
       \ }
 
 autocmd FileType asciidoc setlocal spell
+
+packloadall
+silent! helptags ALL
+let g:ale_set_highlights = 0

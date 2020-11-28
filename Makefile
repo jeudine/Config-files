@@ -11,16 +11,18 @@ GTK2		:= ~/.gtkrc-2.0
 GTK3		:= $(CONF)/gtk-3.0
 ALACRITTY	:= ~/.cargo/bin/alacritty
 CARGO		:= ~/.cargo/bin/cargo
+CARGO_UPDATE	:= ~/.cargo/bin/cargo-install-update
 REDSHIFT	:= $(CONF)/redshift.conf
 
 LIGHTLINE	:= ~/.local/share/nvim/site/pack/lightline/start/lightline/
 FUGITIVE	:= ~/.local/share/nvim/site/pack/tpope/start/fugitive/
+ALE		:= ~/.local/share/nvim/site/pack/git-plugins/start/ale
 
 RM	:= rm -fr
 
 TARGETS	= $(BASHRC) $(XMONAD) $(XSESSION) $(XMOBAR) $(NEOVIM) $(ROFI) $(GTK2) $(GTK3) $(ALACRITTY_C) $(REDSHIFT)
 
-NVIM_P	= $(LIGHTLINE) $(FUGITIVE)
+NVIM_P	= $(LIGHTLINE) $(FUGITIVE) $(ALE)
 
 DIR	= $(CONF) $(XMONAD_D)
 
@@ -32,6 +34,8 @@ install:
 	make $(TARGETS)
 	make $(NVIM_P)
 	make $(ALACRITTY)
+	make $(CARGO_UPDATE)
+	make install_rust
 	@echo "\033[01;32mWORK ENVIRONMENT SUCCESSFULLY INSTALLED!"
 
 $(ALACRITTY): $(CARGO)
@@ -41,11 +45,17 @@ $(ALACRITTY): $(CARGO)
 $(CARGO):
 	curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 
+$(CARGO_UPDATE): $(CARGO)
+	~/.cargo/bin/cargo install cargo-update
+
 $(LIGHTLINE):
 	git clone https://github.com/itchyny/lightline.vim $@
 
 $(FUGITIVE):
 	git clone https://tpope.io/vim/fugitive.git $@
+
+$(ALE):
+	git clone https://github.com/dense-analysis/ale.git $@
 
 clean:
 	$(RM) $(TARGETS)
