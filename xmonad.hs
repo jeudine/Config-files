@@ -94,10 +94,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
       , ((modm,               xK_d     ), spawn "rofi -show run")
 
     -- launch gmrun
-      , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
+      -- , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
 
     -- close focused window
-      , ((modm .|. shiftMask, xK_a     ), kill)
+      , ((modm .|. shiftMask, xK_q     ), kill)
 
      -- Rotate through the available layout algorithms
        , ((modm,               xK_c ), sendMessage NextLayout)

@@ -35,3 +35,6 @@ autocmd FileType asciidoc setlocal spell
 packloadall
 silent! helptags ALL
 let g:ale_set_highlights = 0
+
+"Cursor shpe when leaving
+autocmd VimLeave * set guicursor=a:ver100
