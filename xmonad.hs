@@ -35,7 +35,6 @@ import XMonad.Layout.MultiToggle
 import XMonad.Layout.MultiToggle.Instances
 
 -- Keyboard
-import XMonad.Config.Azerty
 import XMonad.Util.EZConfig(additionalKeys, additionalKeysP)
 
 -- Whether focus follows the mouse pointer.
@@ -274,7 +273,7 @@ main = do
     xmonad $ def {
         terminal             = "~/.cargo/bin/alacritty"
                  , modMask            = mod4Mask
-                 , keys               =  azertyKeys <+> myKeys
+                 , keys               = myKeys
                  , focusFollowsMouse  = myFocusFollowsMouse
                  , borderWidth        = myBorderWidth
                  , workspaces         = myWorkspaces
