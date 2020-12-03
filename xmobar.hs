@@ -1,5 +1,4 @@
-Config {
-    font = "xft:Firacode-Medium  Mono:size=14:antialias=true"
+Config { font = "xft:Firacode-Medium  Mono:size=14:antialias=true"
        , additionalFonts = []
        , borderColor = "#FEFEF8"
        , border = TopB
@@ -21,22 +20,19 @@ Config {
                                          , "--High"     , "5000"       -- units: B/s
                                          , "--low"      , "#1BA6FA"
                                          , "--normal"   , "#8763B8"
-                                         , "--high"     , "#FF301B"
-                                         ] 10
+                                         , "--high"     , "#FF301B" ] 10
                     , Run MultiCpu       [ "--template" , "Cpu: <total>%"
                                          , "--Low"      , "50"
                                          , "--High"     , "85"
                                          , "--low"      , "#1BA6FA"
                                          , "--normal"   , "#8763B8"
-                                         , "--high"     , "#FF301B"
-                                         ] 10
+                                         , "--high"     , "#FF301B" ] 10
                     , Run Memory         [ "--template" ,"Mem: <usedratio>%"
                                          , "--Low"      , "20"
                                          , "--High"     , "90"
                                          , "--low"      , "#1BA6FA"
                                          , "--normal"   , "#8763B8"
-                                         , "--high"     , "#FF301B"
-                                         ] 10
+                                         , "--high"     , "#FF301B" ] 10
                     , Run Date "%a %b %_d, %H:%M:%S" "date" 10
                     , Run Battery        [ "--template" , "Batt: <acstatus>"
                                          , "--Low"      , "15"
@@ -47,11 +43,9 @@ Config {
                                          , "--"
                                          , "-o"	, "<left>% (<timeleft>)"
                                          , "-O"	, "<fc=#8763B8>Charging</fc>"
-                                         , "-i"	, "<fc=#1BA6FA>Charged</fc>"
-                                         ] 50
-                                         , Run StdinReader
-                    ]
-                                         , sepChar = "%"
-                                         , alignSep = "}{"
-                                         , template = "%StdinReader% }\
-                                             \{ %multicpu% | %memory% | %dynnetwork% | <fc=#292C3E>%date%</fc> | %battery% " }
+                                         , "-i"	, "<fc=#1BA6FA>Charged</fc>" ] 50
+                    , Run StdinReader ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }\
+                    \{ %multicpu% | %memory% | %dynnetwork% | <fc=#292C3E>%date%</fc> | %battery% " }

@@ -1,20 +1,4 @@
---
--- xmonad example config file for xmonad-0.9
---
--- A template showing all available configuration hooks,
--- and how to override the defaults in your own xmonad.hs conf file.
---
--- Normally, you'd only override those defaults you care about
---
--- NOTE: Those updating from earlier xmonad versions, who use
--- EwmhDesktops, safeSpawn, WindowGo, or the simple-status-bar
--- setup functions (dzen, xmobar) probably need to change
--- xmonad.hs, please see the notes below, or the following
--- link for more details:
---
--- http://www.haskell.org/haskellwiki/Xmonad/Notable_changes_since_0.8
---
---Modified: Julien Eudine
+-- Jeudine's xmonad.hs
 
 import XMonad
 import Data.Monoid
@@ -46,43 +30,7 @@ myFocusFollowsMouse = True
 
 myBorderWidth   = 0
 
-
--- NOTE: from 0.9.1 on numlock mask is set automatically. The numlockMask
--- setting should be removed from configs.
---
--- You can safely remove this even on earlier xmonad versions unless you
--- need to set it to something other than the default mod2Mask, (e.g. OSX).
---
--- The mask for the numlock key. Numlock status is "masked" from the
--- current modifier status, so the keybindings will work with numlock on or
--- off. You may need to change this on some systems.
---
--- You can find the numlock modifier by running "xmodmap" and looking for a
--- modifier with Num_Lock bound to it:
---
--- > $ xmodmap | grep Num
--- > mod2        Num_Lock (0x4d)
---
--- Set numlockMask = 0 if you don't have a numlock key, or want to treat
--- numlock status separately.
---
--- myNumlockMask   = mod2Mask -- deprecated in xmonad-0.9.1
-------------------------------------------------------------
-
-
--- The default number of workspaces (virtual screens) and their names
--- By default we use numeric strings, but any string may be used as a
--- workspace name. The number of workspaces is determined by the length
--- of this list.
---
--- A tagging example:
---
--- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
-
-myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
-
-------------------------------------------------------------------------
-    -- Key bindings. Add, modify or remove key bindings here.
+myWorkspaces = map show [1..9]
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
@@ -91,6 +39,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch rofi
       , ((modm,               xK_d     ), spawn "rofi -show run")
+
 
     -- launch gmrun
       -- , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
@@ -155,9 +104,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     ++
 
     -- mod-[1..9], Switch to workspace N
-    -- mod-[1..9], Switch to workspace N
     -- mod-shift-[1..9], Move client to workspace N
-    --
     [((m .|. modm, k), windows $ f i)
       | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
       , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
@@ -165,14 +112,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
     -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
-
     [((m .|. modm, key), screenWorkspace sc >>= flip whenJust (windows . f))
-      | (key, sc) <- zip [xK_z, xK_e, xK_r] [0..]
+      | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
       , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
-
-------------------------------------------------------------------------
-    -- Mouse bindings: default actions bound to mouse events
 
 myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 
@@ -270,8 +213,7 @@ myStartupHook = return ()
 
 main = do
     xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar.hs"
-    xmonad $ def {
-        terminal             = "~/.cargo/bin/alacritty"
+    xmonad $ def { terminal           = "~/.cargo/bin/alacritty"
                  , modMask            = mod4Mask
                  , keys               = myKeys
                  , focusFollowsMouse  = myFocusFollowsMouse
@@ -281,10 +223,10 @@ main = do
                  , layoutHook         = avoidStruts myLayout
                  , manageHook         = manageDocks <+> myManageHook
                  , handleEventHook    = myEventHook <+> docksEventHook
-                 , logHook            = dynamicLogWithPP $ xmobarPP { ppOutput = hPutStrLn xmproc
-                                                                    , ppTitle = xmobarColor xmobarTitleColor "" . shorten 70
+                 , logHook            = dynamicLogWithPP $ xmobarPP { ppOutput  = hPutStrLn xmproc
+                                                                    , ppTitle   = xmobarColor xmobarTitleColor "" . shorten 70
                                                                     , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor ""
-                                                                    , ppSep = "   " }
+                                                                    , ppSep     = "   " }
                  , startupHook        = myStartupHook } `additionalKeysP` [ ("<XF86AudioRaiseVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +2%")
                                                                           , ("<XF86AudioLowerVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@  -2%")
                                                                           , ("<XF86AudioMute>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
