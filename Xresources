@@ -1,0 +1,38 @@
+Xcursor.theme: whiteglass
+
+xlogin*login.translations: #override \
+	Ctrl<Key>R: abort-display()\n\
+	<Key>F1: set-session-argument(failsafe) finish-field()\n\
+	<Key>Delete: delete-character()\n\
+	<Key>Left: move-backward-character()\n\
+	<Key>Right: move-forward-character()\n\
+	<Key>Home: move-to-begining()\n\
+	<Key>End: move-to-end()\n\
+	Ctrl<Key>KP_Enter: set-session-argument(failsafe) finish-field()\n\
+	<Key>KP_Enter: set-session-argument() finish-field()\n\
+	Ctrl<Key>Return: set-session-argument(failsafe) finish-field()\n\
+	<Key>Return: set-session-argument() finish-field()
+
+xlogin*greeting: Welcome to GNU/Linux
+xlogin*namePrompt: \040\040\040\040\040\040\040Login:
+xlogin*fail: Login incorrect or forbidden by policy
+
+xlogin*greetFont: Serif-24:bold:italic
+xlogin*font: Serif-18:bold:italic
+xlogin*promptFont: Serif-18:bold:italic
+xlogin*failFont: Serif-18:bold:italic
+xlogin*greetFace:	Serif-18:bold:italic
+xlogin*face: 		Serif-18:bold:italic
+xlogin*promptFace: 	Serif-18:bold:italic
+xlogin*failFace: 	Serif-18:bold:italic
+
+xlogin*borderWidth: 0
+xlogin*frameWidth: 0
+xlogin*innerFramesWidth: 0
+xlogin*shdColor: #292c3e
+xlogin*hiColor: #292c3e
+xlogin*background: #292c3e
+xlogin*greetColor: #1ba6fa
+xlogin*failColor: #ff301b
+*Foreground: #ebebeb
+*Background: #292c3e
