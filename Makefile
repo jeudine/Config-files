@@ -1,5 +1,6 @@
 CONF		:= ~/.config
 XMONAD_D	:= ~/.xmonad
+XDM		:= /etc/X11/xdm
 BASHRC		:= ~/.bashrc
 XMONAD		:= $(XMONAD_D)/xmonad.hs
 XMOBAR		:= $(XMONAD_D)/xmobar.hs
@@ -13,6 +14,8 @@ ALACRITTY	:= ~/.cargo/bin/alacritty
 CARGO		:= ~/.cargo/bin/cargo
 CARGO_UPDATE	:= ~/.cargo/bin/cargo-install-update
 REDSHIFT	:= $(CONF)/redshift.conf
+XDM_R		:= $(XDM)/Xresources
+XDM_S		:= $(XDM)/Xsetup
 
 LIGHTLINE	:= ~/.local/share/nvim/site/pack/lightline/start/lightline/
 FUGITIVE	:= ~/.local/share/nvim/site/pack/tpope/start/fugitive/
@@ -35,7 +38,7 @@ install:
 	make $(NVIM_P)
 	make $(ALACRITTY)
 	make $(CARGO_UPDATE)
-	make install_rust
+	make install_xdm
 	@echo "\033[01;32mWORK ENVIRONMENT SUCCESSFULLY INSTALLED!"
 
 $(ALACRITTY): $(CARGO)
@@ -67,4 +70,9 @@ $(TARGETS): | $(DIR)
 $(DIR):
 	mkdir -p $@
 
-.PHONY: install clean
+install_xdm:
+	sudo $(RM) $(XDM_R) $(XDM_S)
+	sudo ln -sv $(ABSPATH)/Xresources $(XDM_R)
+	sudo ln -sv $(ABSPATH)/Xsetup $(XDM_S)
+
+.PHONY: install clean install_xdm
