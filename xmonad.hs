@@ -96,10 +96,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
       ,((modm              , xK_b     ), sendMessage ToggleStruts)
 
     -- Quit xmonad
-      , ((modm .|. shiftMask, xK_n     ), io (exitWith ExitSuccess))
+      , ((modm .|. shiftMask, xK_e     ), io (exitWith ExitSuccess))
 
     -- Restart xmonad
-      , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
+      , ((modm              , xK_r     ), spawn "xmonad --recompile; xmonad --restart")
     ]
     ++
 
