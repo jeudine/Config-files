@@ -95,4 +95,4 @@ if ! shopt -oq posix; then
   fi
 fi
 export XDG_CONFIG_HOME="$HOME/.config"
-export PATH=$PATH:~/.cargo/bin
+source "$HOME/.cargo/env"
