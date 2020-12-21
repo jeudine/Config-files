@@ -39,6 +39,7 @@ update
 * To change the keyboard layout run `sudo dpkg-reconfigure keyboard-configuration` (and don't forget to enable `Use system keyboard layout` in the advanced menu of `ibus-setup`).
 * Take a look at `monitors-help.adoc` to modify the settings of your monitors.
 * To allow Network Manager to work with every interface, please set `managed` to true in `/etc/NetworkManager/NetworkManager.conf`
+* To configure Plymouth please take a look at https://wiki.debian.org/plymouth[plymouth - Debian Wiki]
 
 == License
 
