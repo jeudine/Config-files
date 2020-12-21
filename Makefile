@@ -32,7 +32,7 @@ DIR	= $(CONF) $(XMONAD_D)
 ABSPATH	:= $(realpath .)
 
 install:
-	sudo apt install xorg xmonad xmobar network-manager feh arc-theme fonts-firacode xdm neovim rofi curl git network-manager redshift libssl-dev
+	sudo apt install xorg xmonad xmobar network-manager feh arc-theme fonts-firacode xdm neovim rofi curl git network-manager redshift
 	make clean
 	make $(TARGETS)
 	make $(NVIM_P)
@@ -49,6 +49,7 @@ $(CARGO):
 	curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 
 $(CARGO_UPDATE): $(CARGO)
+	sudo apt install libssl-dev
 	~/.cargo/bin/cargo install cargo-update
 
 $(LIGHTLINE):
