@@ -4,7 +4,7 @@ env:
   decorations: none
 
 font:
-  size: 14
+  size: 15
   normal:
     family: firacode
     style: Regular
@@ -53,7 +53,9 @@ colors:
     white:   '0xFEFEF8'
 
 key_bindings:
-  - { key: Return,   mods: Control, action: SpawnNewInstance }
+  - { key: Return, mods: Control, action: SpawnNewInstance }
+  - { key: PageUp, action: ScrollPageUp,  }
+  - { key: PageDown, action: ScrollPageDown }
 
 mouse:
     hide_when_typing: true
