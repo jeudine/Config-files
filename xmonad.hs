@@ -226,7 +226,8 @@ main = do
                  , logHook            = dynamicLogWithPP $ xmobarPP { ppOutput  = hPutStrLn xmproc
                                                                     , ppTitle   = xmobarColor xmobarTitleColor "" . shorten 70
                                                                     , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor ""
-                                                                    , ppSep     = "   " }
+                                                                    , ppLayout  = \x -> ""
+                                                                    , ppSep     = " | " }
                  , startupHook        = myStartupHook } `additionalKeysP` [ ("<XF86AudioRaiseVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +2%")
                                                                           , ("<XF86AudioLowerVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@  -2%")
                                                                           , ("<XF86AudioMute>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")

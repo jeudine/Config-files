@@ -15,7 +15,7 @@ Config { font = "xft:Firacode-Medium  Mono:size=14:antialias=true"
        , iconRoot = "."
        , allDesktops = True
        , overrideRedirect = True
-       , commands = [ Run DynNetwork     [ "--template" , "<dev>: <tx>kB/s|<rx>kB/s"
+       , commands = [ Run DynNetwork     [ "--template" , "<dev>: <tx>kB/s*<rx>kB/s"
                                          , "--Low"      , "1000"       -- units: B/s
                                          , "--High"     , "5000"       -- units: B/s
                                          , "--low"      , "#1BA6FA"

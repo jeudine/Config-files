@@ -64,8 +64,9 @@ mouse:
             program: firefox
             args: []
             modifiers: None
-
 cursor:
     style: Beam
     vi_mode_style: Block
 
+window:
+    title: "terminal"
