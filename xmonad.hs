@@ -28,7 +28,7 @@ myFocusFollowsMouse = True
 
 -- Width of the window border in pixels.
 
-myBorderWidth   = 0
+myBorderWidth = 0
 
 myWorkspaces = map show [1..9]
 
@@ -224,7 +224,7 @@ main = do
                  , manageHook         = manageDocks <+> myManageHook
                  , handleEventHook    = myEventHook <+> docksEventHook
                  , logHook            = dynamicLogWithPP $ xmobarPP { ppOutput  = hPutStrLn xmproc
-                                                                    , ppTitle   = xmobarColor xmobarTitleColor "" . shorten 70
+                                                                    , ppTitle   = \x -> ""
                                                                     , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor ""
                                                                     , ppLayout  = \x -> ""
                                                                     , ppSep     = "  " }
@@ -239,8 +239,6 @@ main = do
                                                                           , ("<XF86MonBrightnessUp>", spawn "lux -a 5%")
                                                                           , ("<XF86MonBrightnessDown>", spawn "lux -s 5%") ]
 
--- Color of current window title in xmobar
-xmobarTitleColor = "#1BA6FA"
 
 -- Color of current workspace in xmobar
 xmobarCurrentWorkspaceColor = "#FF301B"

@@ -32,7 +32,7 @@ DIR	= $(CONF) $(XMONAD_D)
 ABSPATH	:= $(realpath .)
 
 install:
-	sudo apt install firmware-linux plymouth xorg xmonad xmobar network-manager feh arc-theme fonts-firacode xdm neovim rofi curl git network-manager redshift fonts-ipafont
+	sudo apt install firmware-linux plymouth xorg xmonad xmobar network-manager feh arc-theme fonts-firacode xdm neovim rofi curl git network-manager redshift fonts-ipafont fonts-font-awesome
 	make clean
 	make $(TARGETS)
 	make $(NVIM_P)
