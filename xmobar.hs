@@ -41,6 +41,8 @@ Config { font = "xft:Firacode-Medium  Mono:size=14:antialias=true, FontAwesome:s
                                          , "--normal"   , "#8763B8"
                                          , "--high"     , "#1BA6FA"
                                          , "--"
+                                         , "-L"         , "15"
+                                         , "-H"         , "62"
                                          , "--highs"    , "<fc=#292C3E>: </fc>"
                                          , "--mediums"  , "<fc=#292C3E>: </fc>"
                                          , "--lows"     , "<fc=#292C3E>: </fc>"
