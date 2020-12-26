@@ -43,11 +43,11 @@ Config { font = "xft:Firacode-Medium  Mono:size=14:antialias=true, FontAwesome:s
                                          , "--"
                                          , "-L"         , "15"
                                          , "-H"         , "62"
-                                         , "--highs"    , "<fc=#292C3E>: </fc>"
-                                         , "--mediums"  , "<fc=#292C3E>: </fc>"
-                                         , "--lows"     , "<fc=#292C3E>: </fc>"
-                                         , "-o"         , "<left><fc=#292C3E>%</fc>"
-                                         , "-O"         , "<fc=#292C3E>:</fc> <left><fc=#292C3E>%</fc>"
+                                         , "--highs"    , "<left><fc=#292C3E>%</fc> <fc=#292C3E></fc>"
+                                         , "--mediums"  , "<left><fc=#292C3E>%</fc> <fc=#292C3E></fc>"
+                                         , "--lows"     , "<left><fc=#292C3E>%</fc> <fc=#292C3E></fc>"
+                                         , "-o"         , ""
+                                         , "-O"         , "<left><fc=#292C3E>%</fc> <fc=#292C3E></fc>"
                                          , "-i"         , "<fc=#1BA6FA></fc>" ] 50
                     , Run StdinReader ]
        , sepChar = "%"
