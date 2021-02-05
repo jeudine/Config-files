@@ -77,6 +77,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias e='nvim'
 alias sudo='sudo '
+alias ssh='export TERM=xterm-256color && ssh'
 alias d='feh -FZx'
 alias "c=xclip -selection clipboard"
 alias "v=xclip -selection clipboard -o"
@@ -96,3 +97,4 @@ if ! shopt -oq posix; then
 fi
 export XDG_CONFIG_HOME="$HOME/.config"
 source "$HOME/.cargo/env"
+export PATH=/home/julien/Desktop/stlink/build/Release/bin:$PATH
