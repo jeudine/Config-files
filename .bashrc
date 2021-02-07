@@ -72,9 +72,9 @@ fi
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -lh'
-alias la='ls -A'
-alias l='ls -CF'
+alias ll='exa -lg --git'
+alias la='exa -a'
+alias l='exa -F'
 alias e='nvim'
 alias sudo='sudo '
 alias ssh='export TERM=xterm-256color && ssh'

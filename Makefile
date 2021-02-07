@@ -32,7 +32,7 @@ DIR	= $(CONF) $(XMONAD_D)
 ABSPATH	:= $(realpath .)
 
 install:
-	sudo apt install firmware-linux plymouth xorg xmonad xmobar network-manager feh arc-theme fonts-firacode xdm neovim rofi curl git network-manager redshift fonts-ipafont fonts-font-awesome
+	sudo apt install firmware-linux plymouth xorg xmonad xmobar network-manager feh arc-theme fonts-firacode xdm neovim rofi curl git network-manager redshift fonts-ipafont fonts-font-awesome asciidoctor ruby-asciidoctor-pdf ruby-pygments.rb
 	make clean
 	make $(TARGETS)
 	make $(NVIM_P)
@@ -50,7 +50,7 @@ $(CARGO):
 
 $(CARGO_UPDATE): $(CARGO)
 	sudo apt install libssl-dev
-	~/.cargo/bin/cargo install cargo-update
+	~/.cargo/bin/cargo install cargo-update bat exa
 
 $(LIGHTLINE):
 	git clone https://github.com/itchyny/lightline.vim $@
