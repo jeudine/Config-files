@@ -17,15 +17,17 @@ REDSHIFT	:= $(CONF)/redshift.conf
 XDM_R		:= $(XDM)/Xresources
 XDM_S		:= $(XDM)/Xsetup
 
-LIGHTLINE	:= ~/.local/share/nvim/site/pack/lightline/start/lightline/
-FUGITIVE	:= ~/.local/share/nvim/site/pack/tpope/start/fugitive/
-ALE		:= ~/.local/share/nvim/site/pack/git-plugins/start/ale
+VIM_PLUGINS	:= ~/.local/share/nvim/site/pack/plugins/start
+LIGHTLINE	:= $(VIM_PLUGINS)/lightline
+FUGITIVE	:= $(VIM_PLUGINS)/fugitive
+ALE		:= $(VIM_PLUGINS)/ale
+TOML		:= $(VIM_PLUGINS)/vim-toml
 
 RM	:= rm -fr
 
 TARGETS	= $(BASHRC) $(XMONAD) $(XSESSION) $(XMOBAR) $(NEOVIM) $(ROFI) $(GTK2) $(GTK3) $(ALACRITTY_C) $(REDSHIFT)
 
-NVIM_P	= $(LIGHTLINE) $(FUGITIVE) $(ALE)
+NVIM_P	= $(LIGHTLINE) $(FUGITIVE) $(ALE) $(TOML)
 
 DIR	= $(CONF) $(XMONAD_D)
 
@@ -60,6 +62,9 @@ $(FUGITIVE):
 
 $(ALE):
 	git clone https://github.com/dense-analysis/ale.git $@
+
+$(TOML):
+	git clone https://github.com/cespare/vim-toml.git $@
 
 clean:
 	$(RM) $(TARGETS)
