@@ -35,7 +35,7 @@ update
 
 * To add a usb group in Debian run  the `usb_group_debian.sh` script as the superuser.
 * Modify the first line of `.xsession` to indicate the path of your wallpaper.
-* To connect to a Wi-Fi network use `nmtui` or `nmcli`. For https://www.eduroam.org/[eduroam] use the https://cat.eduroam.org/[eduroam Configuration Assistant Tool]
+* To connect to a Wi-Fi network use `nmtui` or `nmcli`. For https://www.eduroam.org/[eduroam] use the https://cat.eduroam.org/[eduroam Configuration Assistant Tool] or follow this https://bmlr.me.uk/archives/2019/07/09/nmcli_connect_to_wpa2-enterprise_network_ieee_802_1x/index.html[guide]
 * To change the keyboard layout run `sudo dpkg-reconfigure keyboard-configuration` (and don't forget to enable `Use system keyboard layout` in the advanced menu of `ibus-setup`).
 * Take a look at `monitors-help.adoc` to modify the settings of your monitors.
 * To allow Network Manager to work with every interface, please set `managed` to true in `/etc/NetworkManager/NetworkManager.conf`
