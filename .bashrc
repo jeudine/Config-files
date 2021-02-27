@@ -85,6 +85,9 @@ alias sdn='sudo shutdown now'
 alias python=python3
 alias update='sudo apt update && sudo apt upgrade && rustup update stable && cargo install-update -a'
 
+#include .bashrc_aliases if it exists
+[ -f $HOME/.bashrc_aliases ] && . $HOME/.bashrc_aliases
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
