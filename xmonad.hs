@@ -236,8 +236,8 @@ main = do
                                                                           , ("<XF86AudioPrev>", spawn "playerctl previous")
                                                                           , ("<XF86AudioNext>", spawn "playerctl next")
 
-                                                                          , ("<XF86MonBrightnessUp>", spawn "lux -a 5%")
-                                                                          , ("<XF86MonBrightnessDown>", spawn "lux -s 5%") ]
+                                                                          , ("<XF86MonBrightnessUp>", spawn "brightnessctl s 5%+")
+                                                                          , ("<XF86MonBrightnessDown>", spawn "brightnessctl s 5%-") ]
 
 
 -- Color of current workspace in xmobar
