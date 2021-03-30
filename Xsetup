@@ -1,2 +1,3 @@
 #!/bin/sh
 xsetroot -solid rgb:29/2c/3e
+xrandr --output HDMI-1 --auto --same-as eDP-1

@@ -45,6 +45,7 @@ let g:ale_set_highlights = 0
 "let g:ale_c_cc_executable = 'gcc'
 "let g:ale_cpp_cc_executable = 'g++'
 let g:ale_linters = {'cpp': [], 'c': []}
+let g:ale_rust_cargo_check_examples = 1
 
 ".h files correspond to c
 au BufRead,BufNewFile *.h set filetype=c
