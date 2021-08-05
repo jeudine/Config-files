@@ -44,7 +44,7 @@ install:
 	@echo "\033[01;32mWORK ENVIRONMENT SUCCESSFULLY INSTALLED!"
 
 $(ALACRITTY): $(CARGO)
-	sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev python3
+	sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
 	~/.cargo/bin/cargo install alacritty
 
 $(CARGO):
