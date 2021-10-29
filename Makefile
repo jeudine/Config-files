@@ -16,16 +16,17 @@ CARGO_UPDATE	:= ~/.cargo/bin/cargo-install-update
 REDSHIFT	:= $(CONF)/redshift.conf
 XDM_R		:= $(XDM)/Xresources
 XDM_S		:= $(XDM)/Xsetup
+CLANG_FORM	:= ~/.clang-format
 
 VIM_PLUGINS	:= ~/.local/share/nvim/site/pack/plugins/start
 LIGHTLINE	:= $(VIM_PLUGINS)/lightline
 FUGITIVE	:= $(VIM_PLUGINS)/fugitive
-ALE		:= $(VIM_PLUGINS)/ale
+ALE			:= $(VIM_PLUGINS)/ale
 TOML		:= $(VIM_PLUGINS)/vim-toml
 
 RM	:= rm -fr
 
-TARGETS	= $(BASHRC) $(XMONAD) $(XSESSION) $(XMOBAR) $(NEOVIM) $(ROFI) $(GTK2) $(GTK3) $(ALACRITTY_C) $(REDSHIFT)
+TARGETS	= $(BASHRC) $(XMONAD) $(XSESSION) $(XMOBAR) $(NEOVIM) $(ROFI) $(GTK2) $(GTK3) $(ALACRITTY_C) $(REDSHIFT) $(CLANG_FORM)
 
 NVIM_P	= $(LIGHTLINE) $(FUGITIVE) $(ALE) $(TOML)
 

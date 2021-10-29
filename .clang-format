@@ -1,0 +1,12 @@
+BasedOnStyle: LLVM
+UseTab: ForIndentation
+IndentWidth: 8
+AlignConsecutiveAssignments: true
+AllowShortIfStatementsOnASingleLine: true
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterEnum: true
+  AfterStruct: false
+  SplitEmptyFunction: false
+IndentCaseLabels: true
+ColumnLimit: 0

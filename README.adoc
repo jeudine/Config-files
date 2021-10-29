@@ -6,6 +6,7 @@ A backup of my different configuration files and a way to easily and quickly in
 
 * https://github.com/alacritty/alacritty[Alacritty]
 * https://www.gnu.org/software/bash/[Bash]
+* https://clang.llvm.org/docs/ClangFormat.html[ClangFormat]
 * https://www.gtk.org/[GTK]
 * https://neovim.io/[Neovim]
 * http://jonls.dk/redshift/[Redshift]
