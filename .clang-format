@@ -9,4 +9,4 @@ BraceWrapping:
   AfterStruct: false
   SplitEmptyFunction: false
 IndentCaseLabels: true
-ColumnLimit: 0
+ColumnLimit: 120
