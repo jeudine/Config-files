@@ -8,12 +8,15 @@ endif
 
 set background=dark
 
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
 set noexpandtab
+set copyindent
+set preserveindent
+set softtabstop=0
+set shiftwidth=4
+set tabstop=4
 
-autocmd FileType c,cpp setlocal equalprg=clang-format
+autocmd FileType c,cpp,cuda setlocal equalprg=clang-format
+autocmd FileType rust setlocal equalprg=rustfmt noet ci pi sts=0 sw=4 ts=4
 
 set nosmartindent
 set cindent
@@ -42,17 +45,12 @@ silent! helptags ALL
 
 let g:ale_set_highlights = 0
 
-"WIP ALE for C/C++
-"let g:ale_c_parse_makefile = 1
-"let g:ale_c_parse_compile_commands = 0
-"let g:ale_linters = {'cpp': ['g++'], 'c': ['gcc']}
-"let g:ale_c_cc_executable = 'gcc'
-"let g:ale_cpp_cc_executable = 'g++'
-let g:ale_linters = {'cpp': [], 'c': [], 'asm': []}
-"let g:ale_rust_cargo_check_examples = 1
+let g:ale_c_parse_makefile = 1
+let g:ale_linters = {'cpp': ['g++'], 'c': ['gcc']}
 
 ".h files correspond to c
 au BufRead,BufNewFile *.h set filetype=c
 
 "Cursor shape when leaving
 autocmd VimLeave * set guicursor=a:ver100
+nmap <silent> <C-e> <Plug>(ale_next_wrap)

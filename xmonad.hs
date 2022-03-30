@@ -12,6 +12,7 @@ import XMonad.Util.Run(spawnPipe)
 -- Hooks
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.EwmhDesktops
 
 -- Layouts
 import XMonad.Layout
@@ -213,7 +214,7 @@ myStartupHook = return ()
 
 main = do
     xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar.hs"
-    xmonad $ def { terminal           = "~/.cargo/bin/alacritty"
+    xmonad $ ewmh def { terminal           = "~/.cargo/bin/alacritty"
                  , modMask            = mod4Mask
                  , keys               = myKeys
                  , focusFollowsMouse  = myFocusFollowsMouse
