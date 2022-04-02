@@ -60,7 +60,7 @@ function! Indent()
 endfunction
 
 " Indent on save hook
-autocmd BufWritePre <buffer> call Indent()
+autocmd BufWritePre *.c,*.h,*.cpp,*.hpp,*.cu,*.cuh,*.rs,*.sh,*.vim call Indent()
 
 let g:lightline = {
       		\ 'colorscheme': 'wombat',
