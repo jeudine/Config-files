@@ -15,27 +15,66 @@ set softtabstop=0
 set shiftwidth=4
 set tabstop=4
 
+" Format
 autocmd FileType c,cpp,cuda setlocal equalprg=clang-format
 autocmd FileType rust setlocal equalprg=rustfmt noet ci pi sts=0 sw=4 ts=4
 
 set nosmartindent
+set autoindent
 set cindent
 set list
 set listchars=tab:\│\-,trail:~
 set noshowmode
+
+" Restore cursor position, window position, and last search after running a
+" command.
+function! Preserve(command)
+  	" Save the last search.
+  	let search = @/
+
+  	" Save the current cursor position.
+  	let cursor_position = getpos('.')
+
+  	" Save the current window position.
+  	normal! H
+  	let window_position = getpos('.')
+  	call setpos('.', cursor_position)
+
+  	" Execute the command.
+  	execute a:command
+
+  	" Restore the last search.
+  	let @/ = search
+
+  	" Restore the previous window position.
+  	call setpos('.', window_position)
+  	normal! zt
+
+  	" Restore the previous cursor position.
+  	call setpos('.', cursor_position)
+endfunction
+
+" Re-indent the whole buffer.
+function! Indent()
+  	call Preserve('normal gg=G')
+endfunction
+
+" Indent on save hook
+autocmd BufWritePre <buffer> call Indent()
+
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified', 'charvaluehex' ] ]
-      \ },
-      \ 'component': {
-      \   'charvaluehex': '0x%B'
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
-      \ },
-      \ }
+      		\ 'colorscheme': 'wombat',
+      		\ 'active': {
+      		\   'left': [ [ 'mode', 'paste' ],
+      		\             [ 'gitbranch', 'readonly', 'filename', 'modified', 'charvaluehex' ] ]
+      		\ },
+      		\ 'component': {
+      		\   'charvaluehex': '0x%B'
+      		\ },
+      		\ 'component_function': {
+      		\   'gitbranch': 'FugitiveHead'
+      		\ },
+      		\ }
 
 autocmd FileType asciidoc setlocal spell
 autocmd FileType tex setlocal spell
@@ -43,8 +82,8 @@ autocmd FileType tex setlocal spell
 packloadall
 silent! helptags ALL
 
+" ALE configuration
 let g:ale_set_highlights = 0
-
 let g:ale_c_parse_makefile = 1
 let g:ale_linters = {'cpp': ['g++'], 'c': ['gcc']}
 let g:ale_c_gcc_options='-std=gnu11 -Wall -Werror'
