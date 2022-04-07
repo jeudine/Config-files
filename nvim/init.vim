@@ -8,6 +8,7 @@ endif
 
 set background=dark
 
+" Using tabs for indentation
 set noexpandtab
 set copyindent
 set preserveindent
@@ -15,16 +16,43 @@ set softtabstop=0
 set shiftwidth=4
 set tabstop=4
 
-" Format
-autocmd FileType c,cpp,cuda setlocal equalprg=clang-format
-autocmd FileType rust setlocal equalprg=rustfmt noet ci pi sts=0 sw=4 ts=4
-
 set nosmartindent
 set autoindent
 set cindent
 set list
 set listchars=tab:\│\-,trail:~
+
 set noshowmode
+
+" Format
+autocmd FileType c,cpp,cuda setlocal equalprg=clang-format
+autocmd FileType rust setlocal equalprg=rustfmt noet ci pi sts=0 sw=4 ts=4
+
+" Tag jumping
+
+" Create the ctags file
+command! Maketags !ctags --langmap=c++:+.cu src/*
+
+" Update the ctags file
+function! DelTagOfFile(file)
+  	let fullpath = a:file
+  	let cwd = getcwd()
+  	let tagfilename = cwd . "/tags"
+  	let f = substitute(fullpath, cwd . "/", "", "")
+  	let f = escape(f, './')
+  	let cmd = 'sed -i "/' . f . '/d" "' . tagfilename . '"'
+  	let resp = system(cmd)
+endfunction
+
+function! UpdateTags()
+  	let f = expand("%:p")
+  	let cwd = getcwd()
+  	let tagfilename = cwd . "/tags"
+  	let cmd = 'ctags -a -f ' . tagfilename . ' --c++-kinds=+p --fields=+iaS --extra=+q ' . '"' . f . '"'
+  	call DelTagOfFile(f)
+  	let resp = system(cmd)
+endfunction
+autocmd BufWritePost src/* call UpdateTags()
 
 " Restore cursor position, window position, and last search after running a
 " command.
@@ -87,10 +115,10 @@ let g:ale_set_highlights = 0
 let g:ale_c_parse_makefile = 1
 let g:ale_linters = {'cpp': ['g++'], 'c': ['gcc']}
 let g:ale_c_gcc_options='-std=gnu11 -Wall -Werror'
+nmap <silent> <C-e> <Plug>(ale_next_wrap)
 
 ".h files correspond to c
 au BufRead,BufNewFile *.h set filetype=c
 
 "Cursor shape when leaving
 autocmd VimLeave * set guicursor=a:ver100
-nmap <silent> <C-e> <Plug>(ale_next_wrap)
