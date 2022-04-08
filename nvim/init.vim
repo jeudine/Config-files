@@ -28,6 +28,13 @@ set noshowmode
 autocmd FileType c,cpp,cuda setlocal equalprg=clang-format
 autocmd FileType rust setlocal equalprg=rustfmt noet ci pi sts=0 sw=4 ts=4
 
+" Smart case
+set ignorecase
+set smartcase
+
+" No comments insertion below a comment
+set formatoptions-=ro
+
 " Tag jumping
 
 " Create the ctags file
