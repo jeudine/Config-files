@@ -33,12 +33,12 @@ set ignorecase
 set smartcase
 
 " No comments insertion below a comment
-set formatoptions-=ro
+au BufEnter * set formatoptions-=ro
 
 " Tag jumping
 
 " Create the ctags file
-command! Maketags !ctags --langmap=c++:+.cu src/*
+command! Maketags !ctags --langmap=c:+.cu src/*
 
 " Update the ctags file
 function! DelTagOfFile(file)
@@ -124,8 +124,11 @@ let g:ale_linters = {'cpp': ['g++'], 'c': ['gcc']}
 let g:ale_c_gcc_options='-std=gnu11 -Wall -Werror'
 nmap <silent> <C-e> <Plug>(ale_next_wrap)
 
-".h files correspond to c
+" .h files correspond to c
 au BufRead,BufNewFile *.h set filetype=c
 
-"Cursor shape when leaving
+" Cursor shape when leaving
 autocmd VimLeave * set guicursor=a:ver100
+
+" Enable local configuration file
+set exrc
