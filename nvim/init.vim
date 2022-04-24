@@ -38,7 +38,7 @@ au BufEnter * set formatoptions-=ro
 " Tag jumping
 
 " Create the ctags file
-command! Maketags !ctags --langmap=c:+.cu src/*
+command! Maketags !ctags --langmap=c:+.cu,c:+.cuh src/*
 
 " Update the ctags file
 function! DelTagOfFile(file)
@@ -55,7 +55,7 @@ function! UpdateTags()
   	let f = expand("%:p")
   	let cwd = getcwd()
   	let tagfilename = cwd . "/tags"
-  	let cmd = 'ctags -a -f ' . tagfilename . ' --c++-kinds=+p --fields=+iaS --extra=+q ' . '"' . f . '"'
+  	let cmd = 'ctags --langmap=c:+.cu,c:+.cuh -a -f ' . tagfilename . ' --c++-kinds=+p  src/*--fields=+iaS  --extra=+q ' . '"' . f . '"'
   	call DelTagOfFile(f)
   	let resp = system(cmd)
 endfunction
