@@ -23,6 +23,7 @@ LIGHTLINE	:= $(VIM_PLUGINS)/lightline
 FUGITIVE	:= $(VIM_PLUGINS)/fugitive
 ALE			:= $(VIM_PLUGINS)/ale
 TOML		:= $(VIM_PLUGINS)/vim-toml
+RUST		:= $(VIM_PLUGINS)/rust.vim
 
 RM	:= rm -fr
 
@@ -66,6 +67,9 @@ $(ALE):
 
 $(TOML):
 	git clone https://github.com/cespare/vim-toml.git $@
+
+$(RUST):
+	git clone https://github.com/rust-lang/rust.vim $@
 
 clean:
 	$(RM) $(TARGETS)
