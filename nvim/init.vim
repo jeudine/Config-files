@@ -26,7 +26,7 @@ set noshowmode
 
 " Format
 autocmd FileType c,cpp,cuda setlocal equalprg=clang-format
-autocmd FileType rust setlocal equalprg=rustfmt
+autocmd FileType rust setlocal equalprg=rustfmt noet ci pi sts=0 sw=4 ts=4
 
 " Smart case
 set ignorecase
