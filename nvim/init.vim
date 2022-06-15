@@ -26,6 +26,7 @@ set noshowmode
 
 " Format
 autocmd FileType c,cpp,cuda setlocal equalprg=clang-format
+autocmd FileType rust setlocal equalprg=rustfmt
 
 " Smart case
 set ignorecase
@@ -94,7 +95,7 @@ function! Indent()
 endfunction
 
 " Indent on save hook
-autocmd BufWritePre *.c,*.h,*.cpp,*.hpp,*.cu,*.cuh,*.rs,*.sh,*.vim call Indent()
+autocmd BufWritePre *.c,*.h,*.cpp,*.hpp,*.cu,*.cuh,*.sh,*.vim,*.rs call Indent()
 
 let g:lightline = {
       		\ 'colorscheme': 'wombat',
@@ -131,6 +132,3 @@ autocmd VimLeave * set guicursor=a:ver100
 
 " Enable local configuration file
 set exrc
-
-" Rust
-let g:rustfmt_autosave = 1

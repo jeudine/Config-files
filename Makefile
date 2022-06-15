@@ -16,18 +16,18 @@ CARGO_UPDATE	:= ~/.cargo/bin/cargo-install-update
 REDSHIFT	:= $(CONF)/redshift.conf
 XDM_R		:= $(XDM)/Xresources
 XDM_S		:= $(XDM)/Xsetup
-CLANG_FORM	:= ~/.clang-format
+CLANG_FMT	:= ~/.clang-format
+RUST_FMT	:= ~/.config/rustfmt/rustfmt.toml
 
 VIM_PLUGINS	:= ~/.local/share/nvim/site/pack/plugins/start
 LIGHTLINE	:= $(VIM_PLUGINS)/lightline
 FUGITIVE	:= $(VIM_PLUGINS)/fugitive
 ALE			:= $(VIM_PLUGINS)/ale
 TOML		:= $(VIM_PLUGINS)/vim-toml
-RUST		:= $(VIM_PLUGINS)/rust.vim
 
 RM	:= rm -fr
 
-TARGETS	= $(BASHRC) $(XMONAD) $(XSESSION) $(XMOBAR) $(NEOVIM) $(ROFI) $(GTK2) $(GTK3) $(ALACRITTY_C) $(REDSHIFT) $(CLANG_FORM)
+TARGETS	= $(BASHRC) $(XMONAD) $(XSESSION) $(XMOBAR) $(NEOVIM) $(ROFI) $(GTK2) $(GTK3) $(ALACRITTY_C) $(REDSHIFT) $(CLANG_FMT) $(RUST_FMT)
 
 NVIM_P	= $(LIGHTLINE) $(FUGITIVE) $(ALE) $(TOML)
 
@@ -67,9 +67,6 @@ $(ALE):
 
 $(TOML):
 	git clone https://github.com/cespare/vim-toml.git $@
-
-$(RUST):
-	git clone https://github.com/rust-lang/rust.vim $@
 
 clean:
 	$(RM) $(TARGETS)
