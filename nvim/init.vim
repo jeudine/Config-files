@@ -59,7 +59,10 @@ function! UpdateTags()
   	call DelTagOfFile(f)
   	let resp = system(cmd)
 endfunction
-autocmd BufWritePost src/* call UpdateTags()
+autocmd BufWritePost src/*.c call UpdateTags()
+autocmd BufWritePost src/*.h call UpdateTags()
+autocmd BufWritePost src/*.cu call UpdateTags()
+autocmd BufWritePost src/*.cuh call UpdateTags()
 
 " Restore cursor position, window position, and last search after running a
 " command.
@@ -95,7 +98,7 @@ function! Indent()
 endfunction
 
 " Indent on save hook
-autocmd BufWritePre *.c,*.h,*.cpp,*.hpp,*.cu,*.cuh,*.sh,*.vim,*.rs call Indent()
+autocmd BufWritePre *.c,*.h,*.cpp,*.hpp,*.cu,*.cuh,*.sh,*.vim call Indent()
 
 let g:lightline = {
       		\ 'colorscheme': 'wombat',
