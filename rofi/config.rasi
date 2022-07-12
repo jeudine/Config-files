@@ -46,6 +46,7 @@ textbox-prompt-colon {
 
 entry {
   margin: 0px 10px;
+  text-color: @text-alt;
 }
 
 listview {
