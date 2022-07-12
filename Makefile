@@ -1,9 +1,5 @@
 CONF		:= ~/.config
-XMONAD_D	:= ~/.xmonad
-XDM		:= /etc/X11/xdm
 BASHRC		:= ~/.bashrc
-XMONAD		:= $(XMONAD_D)/xmonad.hs
-XMOBAR		:= $(XMONAD_D)/xmobar.hs
 XSESSION	:= ~/.xsession
 NEOVIM		:= $(CONF)/nvim
 ALACRITTY_C	:= $(CONF)/alacritty.yml
@@ -14,8 +10,6 @@ ALACRITTY	:= ~/.cargo/bin/alacritty
 CARGO		:= ~/.cargo/bin/cargo
 CARGO_UPDATE	:= ~/.cargo/bin/cargo-install-update
 REDSHIFT	:= $(CONF)/redshift.conf
-XDM_R		:= $(XDM)/Xresources
-XDM_S		:= $(XDM)/Xsetup
 CLANG_FMT	:= ~/.clang-format
 RUST_FMT	:= ~/.config/rustfmt/rustfmt.toml
 
@@ -27,22 +21,21 @@ TOML		:= $(VIM_PLUGINS)/vim-toml
 
 RM	:= rm -fr
 
-TARGETS	= $(BASHRC) $(XMONAD) $(XSESSION) $(XMOBAR) $(NEOVIM) $(ROFI) $(GTK2) $(GTK3) $(ALACRITTY_C) $(REDSHIFT) $(CLANG_FMT) $(RUST_FMT)
+TARGETS	= $(BASHRC)$(XSESSION) $(NEOVIM) $(ROFI) $(GTK2) $(GTK3) $(ALACRITTY_C) $(REDSHIFT) $(CLANG_FMT) $(RUST_FMT)
 
 NVIM_P	= $(LIGHTLINE) $(FUGITIVE) $(ALE) $(TOML)
 
-DIR	= $(CONF) $(XMONAD_D)
+DIR	= $(CONF)
 
 ABSPATH	:= $(realpath .)
 
 install:
-	sudo apt install firmware-linux plymouth xorg xmonad xmobar network-manager feh arc-theme fonts-firacode xdm neovim rofi curl git network-manager redshift fonts-ipafont fonts-font-awesome asciidoctor ruby-asciidoctor-pdf ruby-pygments.rb brightnessctl glibc-doc exuberant-ctags
+	sudo apt install firmware-linux xorg gcc network-manager feh neovim rofi git redshift fonts-firacode fonts-font-awesome glibc-doc exuberant-ctags clang-format curl awesome awesome-extra
 	make clean
 	make $(TARGETS)
 	make $(NVIM_P)
 	make $(ALACRITTY)
 	make $(CARGO_UPDATE)
-	make install_xdm
 	@echo "\033[01;32mWORK ENVIRONMENT SUCCESSFULLY INSTALLED!"
 
 $(ALACRITTY): $(CARGO)
@@ -78,9 +71,5 @@ $(TARGETS): | $(DIR)
 $(DIR):
 	mkdir -p $@
 
-install_xdm:
-	sudo $(RM) $(XDM_R) $(XDM_S)
-	sudo ln -sv $(ABSPATH)/Xresources $(XDM_R)
-	sudo ln -sv $(ABSPATH)/Xsetup $(XDM_S)
 
-.PHONY: install clean install_xdm
+.PHONY: install clean
