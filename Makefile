@@ -5,7 +5,6 @@ XINITRC			:= ~/.xinitrc
 GITCONFIG		:= ~/.gitconfig
 NEOVIM			:= $(CONF)/nvim
 ALACRITTY_C		:= $(CONF)/alacritty.yml
-ROFI			:= $(CONF)/rofi
 GTK2			:= ~/.gtkrc-2.0
 GTK3			:= $(CONF)/gtk-3.0
 ALACRITTY		:= ~/.cargo/bin/alacritty
@@ -26,7 +25,7 @@ TOML		:= $(VIM_PLUGINS)/vim-toml
 
 RM	:= rm -fr
 
-TARGETS	= $(BASHRC) $(XSESSION) $(XINITRC) $(NEOVIM) $(ROFI) $(GTK2) $(GTK3) $(ALACRITTY_C) $(REDSHIFT) $(CLANG_FMT) $(RUST_FMT) $(GITCONFIG) $(AWESOME)
+TARGETS	= $(BASHRC) $(XSESSION) $(XINITRC) $(NEOVIM) $(GTK2) $(GTK3) $(ALACRITTY_C) $(REDSHIFT) $(CLANG_FMT) $(RUST_FMT) $(GITCONFIG) $(AWESOME)
 
 NVIM_P	= $(LIGHTLINE) $(FUGITIVE) $(ALE) $(TOML)
 
@@ -35,7 +34,7 @@ DIR	= $(CONF) $(RUST_FMT_DIR) $(AWESOME_DIR)
 ABSPATH	:= $(realpath .)
 
 install:
-	sudo apt install firmware-linux xorg gcc network-manager feh neovim rofi git redshift fonts-firacode fonts-font-awesome glibc-doc exuberant-ctags clang-format curl awesome awesome-extra
+	sudo apt install firmware-linux xorg gcc network-manager feh neovim git redshift fonts-firacode fonts-font-awesome glibc-doc exuberant-ctags clang-format curl awesome awesome-extra
 	make clean
 	make $(TARGETS)
 	make $(NVIM_P)

@@ -388,13 +388,7 @@ function (c)
     c.maximized_horizontal = not c.maximized_horizontal
     c:raise()
 end ,
-{description = "(un)maximize horizontally", group = "client"}),
-awful.key({modkey}, "d",
-function()
-    awful.spawn.with_shell("rofi -show drun &>> /tmp/rofi.log")
-end ,
-{description = "open rofi", group = "launcher"})
-
+{description = "(un)maximize horizontally", group = "client"})
 )
 
 -- Bind all key numbers to tags.

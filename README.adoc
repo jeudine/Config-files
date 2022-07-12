@@ -10,7 +10,6 @@ A backup of my different configuration files and a way to easily and quickly in
 * https://www.gtk.org/[GTK]
 * https://neovim.io/[Neovim]
 * http://jonls.dk/redshift/[Redshift]
-* https://github.com/davatorium/rofi[Rofi]
 * https://www.x.org/releases/X11R7.6/doc/man/man1/xdm.1.xhtml[XDM]
 * https://xmobar.org/[Xmobar]
 * https://xmonad.org/[Xmonad]
