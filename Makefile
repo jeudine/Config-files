@@ -13,8 +13,10 @@ CARGO			:= ~/.cargo/bin/cargo
 CARGO_UPDATE	:= ~/.cargo/bin/cargo-install-update
 REDSHIFT		:= $(CONF)/redshift.conf
 CLANG_FMT		:= ~/.clang-format
-RUST_FMT_DIR	:= ~/.config/rustfmt
+RUST_FMT_DIR	:= $(CONF)/rustfmt
 RUST_FMT		:= $(RUST_FMT_DIR)/rustfmt.toml
+AWESOME_DIR		:= $(CONF)/awesome
+AWESOME			:= $(AWESOME_DIR)/rc.lua
 
 VIM_PLUGINS	:= ~/.local/share/nvim/site/pack/plugins/start
 LIGHTLINE	:= $(VIM_PLUGINS)/lightline
@@ -24,11 +26,11 @@ TOML		:= $(VIM_PLUGINS)/vim-toml
 
 RM	:= rm -fr
 
-TARGETS	= $(BASHRC) $(XSESSION) $(XINITRC) $(NEOVIM) $(ROFI) $(GTK2) $(GTK3) $(ALACRITTY_C) $(REDSHIFT) $(CLANG_FMT) $(RUST_FMT) $(GITCONFIG)
+TARGETS	= $(BASHRC) $(XSESSION) $(XINITRC) $(NEOVIM) $(ROFI) $(GTK2) $(GTK3) $(ALACRITTY_C) $(REDSHIFT) $(CLANG_FMT) $(RUST_FMT) $(GITCONFIG) $(AWESOME)
 
 NVIM_P	= $(LIGHTLINE) $(FUGITIVE) $(ALE) $(TOML)
 
-DIR	= $(CONF) $(RUST_FMT_DIR)
+DIR	= $(CONF) $(RUST_FMT_DIR) $(AWESOME_DIR)
 
 ABSPATH	:= $(realpath .)
 
