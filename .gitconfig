@@ -1,0 +1,7 @@
+[user]
+	name = julien
+	email = julien@eudine.fr
+[core]
+	editor = nvim
+[pull]
+	rebase = false

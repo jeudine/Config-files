@@ -1,17 +1,20 @@
-CONF		:= ~/.config
-BASHRC		:= ~/.bashrc
-XSESSION	:= ~/.xsession
-NEOVIM		:= $(CONF)/nvim
-ALACRITTY_C	:= $(CONF)/alacritty.yml
-ROFI		:= $(CONF)/rofi
-GTK2		:= ~/.gtkrc-2.0
-GTK3		:= $(CONF)/gtk-3.0
-ALACRITTY	:= ~/.cargo/bin/alacritty
-CARGO		:= ~/.cargo/bin/cargo
+CONF			:= ~/.config
+BASHRC			:= ~/.bashrc
+XSESSION		:= ~/.xsession
+XINITRC			:= ~/.xinitrc
+GITCONFIG		:= ~/.gitconfig
+NEOVIM			:= $(CONF)/nvim
+ALACRITTY_C		:= $(CONF)/alacritty.yml
+ROFI			:= $(CONF)/rofi
+GTK2			:= ~/.gtkrc-2.0
+GTK3			:= $(CONF)/gtk-3.0
+ALACRITTY		:= ~/.cargo/bin/alacritty
+CARGO			:= ~/.cargo/bin/cargo
 CARGO_UPDATE	:= ~/.cargo/bin/cargo-install-update
-REDSHIFT	:= $(CONF)/redshift.conf
-CLANG_FMT	:= ~/.clang-format
-RUST_FMT	:= ~/.config/rustfmt/rustfmt.toml
+REDSHIFT		:= $(CONF)/redshift.conf
+CLANG_FMT		:= ~/.clang-format
+RUST_FMT_DIR	:= ~/.config/rustfmt
+RUST_FMT		:= $(RUST_FMT_DIR)/rustfmt.toml
 
 VIM_PLUGINS	:= ~/.local/share/nvim/site/pack/plugins/start
 LIGHTLINE	:= $(VIM_PLUGINS)/lightline
@@ -21,11 +24,11 @@ TOML		:= $(VIM_PLUGINS)/vim-toml
 
 RM	:= rm -fr
 
-TARGETS	= $(BASHRC) $(XSESSION) $(NEOVIM) $(ROFI) $(GTK2) $(GTK3) $(ALACRITTY_C) $(REDSHIFT) $(CLANG_FMT) $(RUST_FMT)
+TARGETS	= $(BASHRC) $(XSESSION) $(XINITRC) $(NEOVIM) $(ROFI) $(GTK2) $(GTK3) $(ALACRITTY_C) $(REDSHIFT) $(CLANG_FMT) $(RUST_FMT) $(GITCONFIG)
 
 NVIM_P	= $(LIGHTLINE) $(FUGITIVE) $(ALE) $(TOML)
 
-DIR	= $(CONF)
+DIR	= $(CONF) $(RUST_FMT_DIR)
 
 ABSPATH	:= $(realpath .)
 
@@ -36,7 +39,7 @@ install:
 	make $(NVIM_P)
 	make $(ALACRITTY)
 	make $(CARGO_UPDATE)
-	@echo "\033[01;32mWORK ENVIRONMENT SUCCESSFULLY INSTALLED!"
+	@echo "\033[01;32mWORK ENVIRONMENT SUCCESSFULLY INSTALLED!\033[00m"
 
 $(ALACRITTY): $(CARGO)
 	sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
@@ -66,7 +69,7 @@ clean:
 
 $(TARGETS): | $(DIR)
 	FILE="$(shell echo $@ | rev | cut -d '/' -f 1 | rev)";\
-	ln -sv $(ABSPATH)/$$FILE $@
+		 ln -sv $(ABSPATH)/$$FILE $@
 
 $(DIR):
 	mkdir -p $@
