@@ -114,7 +114,7 @@ let g:lightline = {
       		\ },
       		\ }
 
-autocmd FileType asciidoc setlocal spell
+autocmd FileType markdown setlocal spell
 autocmd FileType tex setlocal spell
 
 packloadall
