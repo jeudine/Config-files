@@ -91,7 +91,7 @@ myawesomemenu = {
    	{ "manual", terminal .. " -e man awesome" },
    	{ "edit config", editor_cmd .. " " .. awesome.conffile },
    	{ "restart", awesome.restart },
-   	{ "quit", function() awesome.quit() end },
+   	{ "quit", function() exec("pkill xcompmgr") awesome.quit() end },
 }
 
 local menu_awesome = { "awesome", myawesomemenu, beautiful.awesome_icon }
