@@ -103,16 +103,16 @@ autocmd BufWritePre *.c,*.h,*.cpp,*.hpp,*.cu,*.cuh,*.sh,*.vim call Indent()
 let g:lightline = {
       		\ 'colorscheme': 'wombat',
       		\ 'active': {
-      		\   'left': [ [ 'mode', 'paste' ],
-      		\             [ 'gitbranch', 'readonly', 'filename', 'modified', 'charvaluehex' ] ]
-      		\ },
-      		\ 'component': {
-      		\   'charvaluehex': '0x%B'
-      		\ },
-      		\ 'component_function': {
-      		\   'gitbranch': 'FugitiveHead'
-      		\ },
-      		\ }
+      			\   'left': [ [ 'mode', 'paste' ],
+      			\             [ 'gitbranch', 'readonly', 'filename', 'modified', 'charvaluehex' ] ]
+      			\ },
+      			\ 'component': {
+      				\   'charvaluehex': '0x%B'
+      				\ },
+      				\ 'component_function': {
+      					\   'gitbranch': 'FugitiveHead'
+      					\ },
+      					\ }
 
 autocmd FileType markdown setlocal spell
 autocmd FileType tex setlocal spell
@@ -126,9 +126,6 @@ let g:ale_c_parse_makefile = 1
 let g:ale_linters = {'cpp': ['g++'], 'c': ['gcc']}
 let g:ale_c_gcc_options='-std=gnu11 -Wall -Werror'
 nmap <silent> <C-e> <Plug>(ale_next_wrap)
-
-" .h files correspond to c
-au BufRead,BufNewFile *.h set filetype=c
 
 " Cursor shape when leaving
 autocmd VimLeave * set guicursor=a:ver100

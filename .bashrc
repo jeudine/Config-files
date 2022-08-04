@@ -86,7 +86,7 @@ alias python=python3
 alias update='sudo apt update && sudo apt upgrade && rustup update stable && cargo install-update -a'
 
 #include .bashrc_aliases if it exists
-[ -f $HOME/.bashrc_aliases ] && . $HOME/.bashrc_aliases
+[ -f $HOME/.bashrc_extra ] && . $HOME/.bashrc_extra
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -100,4 +100,3 @@ if ! shopt -oq posix; then
 fi
 export XDG_CONFIG_HOME="$HOME/.config"
 source "$HOME/.cargo/env"
-export PATH=/home/julien/Desktop/stlink/build/Release/bin:$PATH
