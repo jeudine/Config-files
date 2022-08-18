@@ -124,7 +124,7 @@ silent! helptags ALL
 let g:ale_set_highlights = 0
 let g:ale_c_parse_makefile = 1
 let g:ale_linters = {'cpp': ['g++'], 'c': ['gcc']}
-let g:ale_c_gcc_options='-std=gnu11 -Wall -Werror'
+let g:ale_c_gcc_options='-std=gnu11 -Wall -Werror -Wextra'
 nmap <silent> <C-e> <Plug>(ale_next_wrap)
 
 " Cursor shape when leaving
