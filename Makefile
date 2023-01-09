@@ -22,12 +22,13 @@ LIGHTLINE	:= $(VIM_PLUGINS)/lightline
 FUGITIVE	:= $(VIM_PLUGINS)/fugitive
 ALE			:= $(VIM_PLUGINS)/ale
 TOML		:= $(VIM_PLUGINS)/vim-toml
+RUST_VIM	:= $(VIM_PLUGINS)/rust.vim
 
 RM	:= rm -fr
 
 TARGETS	= $(BASHRC) $(XSESSION) $(XINITRC) $(NEOVIM) $(GTK2) $(GTK3) $(ALACRITTY_C) $(REDSHIFT) $(CLANG_FMT) $(RUST_FMT) $(GITCONFIG) $(AWESOME)
 
-NVIM_P	= $(LIGHTLINE) $(FUGITIVE) $(ALE) $(TOML)
+NVIM_P	= $(LIGHTLINE) $(FUGITIVE) $(ALE) $(TOML) $(RUST_VIM)
 
 DIR	= $(CONF) $(RUST_FMT_DIR) $(AWESOME_DIR)
 
@@ -64,6 +65,9 @@ $(ALE):
 
 $(TOML):
 	git clone https://github.com/cespare/vim-toml.git $@
+
+$(RUST_VIM):
+	git clone https://github.com/rust-lang/rust.vim.git $@
 
 clean:
 	$(RM) $(TARGETS)
