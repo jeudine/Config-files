@@ -6,5 +6,4 @@
 [pull]
 	rebase = false
 [safe]
-	directory = /home/julien/Desktop/HACC/mnt/
 	directory = /home/julien/Desktop/HACC/mnt/FPGA_Genome_Indexing
