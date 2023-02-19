@@ -84,6 +84,8 @@ alias "v=xclip -selection clipboard -o"
 alias sdn='sudo shutdown now'
 alias python=python3
 alias update='sudo apt update && sudo apt upgrade && rustup update stable && cargo install-update -a'
+alias screenshot='sleep 5; xwd -root | xwdtopnm | pnmtopng'
+alias screenshot_window='xwd | xwdtopnm | pnmtopng'
 
 #include .bashrc_aliases if it exists
 [ -f $HOME/.bashrc_extra ] && . $HOME/.bashrc_extra
