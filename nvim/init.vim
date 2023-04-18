@@ -62,6 +62,8 @@ function! UpdateTags()
 endfunction
 autocmd BufWritePost src/*.c call UpdateTags()
 autocmd BufWritePost src/*.h call UpdateTags()
+autocmd BufWritePost src/*.cpp call UpdateTags()
+autocmd BufWritePost src/*.hpp call UpdateTags()
 autocmd BufWritePost src/*.cu call UpdateTags()
 autocmd BufWritePost src/*.cuh call UpdateTags()
 
