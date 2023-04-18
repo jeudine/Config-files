@@ -7,4 +7,3 @@
 	rebase = false
 [safe]
 	directory = /home/julien/Desktop/HACC/mnt/FPGA_Genome_Indexing
-	directory = /home/julien/Desktop/HACC/mnt/map_1
