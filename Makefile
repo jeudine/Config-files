@@ -35,7 +35,7 @@ DIR	= $(CONF) $(RUST_FMT_DIR) $(AWESOME_DIR)
 ABSPATH	:= $(realpath .)
 
 install:
-	sudo apt install -y firmware-misc-nonfree xorg xcompmgr gcc network-manager feh neovim git redshift fonts-firacode fonts-font-awesome glibc-doc exuberant-ctags clang-format curl awesome awesome-extra network-manager-gnome xfce4-power-manager pavucontrol
+	sudo apt install -y firmware-misc-nonfree xorg xcompmgr gcc network-manager feh neovim git redshift fonts-firacode fonts-font-awesome glibc-doc exuberant-ctags clang-format curl awesome awesome-extra network-manager-gnome xfce4-power-manager pavucontrol libalsaplayer-dev
 	make clean
 	make $(TARGETS)
 	make $(NVIM_P)
