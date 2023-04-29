@@ -35,7 +35,7 @@ DIR	= $(CONF) $(RUST_FMT_DIR) $(AWESOME_DIR)
 ABSPATH	:= $(realpath .)
 
 install:
-	sudo apt install firmware-linux xorg xcompmgr gcc network-manager feh neovim git redshift fonts-firacode fonts-font-awesome glibc-doc exuberant-ctags clang-format curl awesome awesome-extra network-manager-gnome xfce4-power-manager
+	sudo apt install firmware-misc-nonfree xorg xcompmgr gcc network-manager feh neovim git redshift fonts-firacode fonts-font-awesome glibc-doc exuberant-ctags clang-format curl awesome awesome-extra network-manager-gnome xfce4-power-manager -y
 	make clean
 	make $(TARGETS)
 	make $(NVIM_P)
@@ -44,14 +44,14 @@ install:
 	@echo "\033[01;32mWORK ENVIRONMENT SUCCESSFULLY INSTALLED!\033[00m"
 
 $(ALACRITTY): $(CARGO)
-	sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
+	sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 -y
 	~/.cargo/bin/cargo install alacritty
 
 $(CARGO):
 	curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 
 $(CARGO_UPDATE): $(CARGO)
-	sudo apt install libssl-dev
+	sudo apt install libssl-dev -y
 	~/.cargo/bin/cargo install cargo-update bat exa
 
 $(LIGHTLINE):
