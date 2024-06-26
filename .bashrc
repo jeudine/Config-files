@@ -41,7 +41,7 @@ then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;33m\] \[\033[00m\]'
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;33m\]󱇳 \[\033[00m\]'
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -75,7 +75,7 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 alias ll='exa -lg --git'
 alias la='exa -a'
 alias l='exa -F'
-alias e='nvim'
+alias e='lvim'
 alias sudo='sudo '
 alias ssh='export TERM=xterm-256color && ssh'
 alias d='feh -FZx'
@@ -103,3 +103,7 @@ fi
 export XDG_CONFIG_HOME="$HOME/.config"
 source "$HOME/.cargo/env"
 . "$HOME/.cargo/env"
+
+# If nvim installed with package manager remove this line
+export PATH=/opt/nvim-linux64/bin:$PATH
+export PATH=/home/julien/.local/bin:$PATH
