@@ -38,15 +38,15 @@ decorations = "none"
 size = 15
 
 [font.bold]
-family = "firacode"
+family = "FiraCode Nerd Font"
 style = "Bold"
 
 [font.italic]
-family = "firacode"
+family = "FiraCode Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "firacode"
+family = "FiraCode Nerd Font"
 style = "Regular"
 
 [[keyboard.bindings]]
