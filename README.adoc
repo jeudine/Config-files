@@ -8,11 +8,7 @@ A backup of my different configuration files and a way to easily and quickly in
 * https://www.gnu.org/software/bash/[Bash]
 * https://clang.llvm.org/docs/ClangFormat.html[ClangFormat]
 * https://www.gtk.org/[GTK]
-* https://neovim.io/[Neovim]
 * http://jonls.dk/redshift/[Redshift]
-* https://www.x.org/releases/X11R7.6/doc/man/man1/xdm.1.xhtml[XDM]
-* https://xmobar.org/[Xmobar]
-* https://xmonad.org/[Xmonad]
 * https://wiki.debian.org/Xsession[Xsession]
 
 == Installation
@@ -35,7 +31,6 @@ update
 
 * To add a usb group in Debian run  the `usb_group_debian.sh` script as the superuser.
 * Modify the first line of `.xsession` to indicate the path of your wallpaper.
-* To connect to a Wi-Fi network use `nmtui` or `nmcli`. For https://www.eduroam.org/[eduroam] use the https://cat.eduroam.org/[eduroam Configuration Assistant Tool] or follow this https://bmlr.me.uk/archives/2019/07/09/nmcli_connect_to_wpa2-enterprise_network_ieee_802_1x/index.html[guide]
 * To change the keyboard layout run `sudo dpkg-reconfigure keyboard-configuration` (`Generic 105-key PC`, `English (US) - English (intl., with AltGr dead keys)`, `The default for the keyboard layout`, `Right Alt (AltGr)`).
 * Take a look at `monitors-help.adoc` to modify the settings of your monitors.
 * To allow Network Manager to work with every interface, please set `managed` to true in `/etc/NetworkManager/NetworkManager.conf`
