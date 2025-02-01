@@ -14,18 +14,17 @@ REDSHIFT		:= $(CONF)/redshift.conf
 CLANG_FMT		:= ~/.clang-format
 AWESOME_DIR		:= $(CONF)/awesome
 AWESOME			:= $(AWESOME_DIR)/rc.lua
-LVIM	:= $(CONF)/lvim
 
 RM	:= rm -fr
 
-TARGETS	= $(BASHRC) $(XSESSION) $(XINITRC) $(GTK2) $(GTK3) $(ALACRITTY_C) $(REDSHIFT) $(CLANG_FMT) $(GITCONFIG) $(AWESOME) $(LVIM)
+TARGETS	= $(BASHRC) $(XSESSION) $(XINITRC) $(GTK2) $(GTK3) $(ALACRITTY_C) $(REDSHIFT) $(CLANG_FMT) $(GITCONFIG) $(AWESOME)
 
 DIR	= $(CONF) $(AWESOME_DIR)
 
 ABSPATH	:= $(realpath .)
 
 install:
-	sudo apt install -y firmware-misc-nonfree xorg xcompmgr gcc network-manager feh neovim git redshift glibc-doc exuberant-ctags clang-format curl awesome awesome-extra network-manager-gnome xfce4-power-manager pavucontrol libalsaplayer-dev libvulkan1 mesa-vulkan-drivers fonts-firacode
+	sudo apt install -y firmware-misc-nonfree xorg xcompmgr gcc network-manager feh git redshift glibc-doc exuberant-ctags clang-format curl awesome awesome-extra network-manager-gnome xfce4-power-manager pavucontrol libalsaplayer-dev libvulkan1 mesa-vulkan-drivers fonts-firacode
 	make clean
 	make $(TARGETS)
 	make $(ALACRITTY)
