@@ -107,3 +107,4 @@ source "$HOME/.cargo/env"
 # If nvim installed with package manager remove this line
 export PATH=/opt/nvim-linux64/bin:$PATH
 export PATH=/home/julien/.local/bin:$PATH
+export PATH=/home/julien/pip/bin:$PATH
