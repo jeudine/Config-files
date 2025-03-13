@@ -2,6 +2,6 @@
 	name = julien
 	email = julien@eudine.fr
 [core]
-	editor = lvim
+	editor = nvim
 [pull]
 	rebase = false
