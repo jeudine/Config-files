@@ -3,7 +3,8 @@ BASHRC			:= ~/.bashrc
 XSESSION		:= ~/.xsession
 XINITRC			:= ~/.xinitrc
 GITCONFIG		:= ~/.gitconfig
-NEOVIM			:= $(CONF)/nvim
+AVIM_POLISH:= $(CONF)/nvim/lua/polish.lua
+AVIM_USER:= $(CONF)/nvim/lua/plugins/user.lua
 ALACRITTY_C		:= $(CONF)/alacritty.toml
 GTK2			:= ~/.gtkrc-2.0
 GTK3			:= $(CONF)/gtk-3.0
@@ -17,7 +18,7 @@ AWESOME			:= $(AWESOME_DIR)/rc.lua
 
 RM	:= rm -fr
 
-TARGETS	= $(BASHRC) $(XSESSION) $(XINITRC) $(GTK2) $(GTK3) $(ALACRITTY_C) $(REDSHIFT) $(CLANG_FMT) $(GITCONFIG) $(AWESOME)
+TARGETS	= $(BASHRC) $(XSESSION) $(XINITRC) $(GTK2) $(GTK3) $(ALACRITTY_C) $(REDSHIFT) $(CLANG_FMT) $(GITCONFIG) $(AWESOME) $(AVIM_USER) $(AVIM_POLISH)
 
 DIR	= $(CONF) $(AWESOME_DIR)
 
