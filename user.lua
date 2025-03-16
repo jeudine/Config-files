@@ -21,9 +21,4 @@ return {
       return opts
     end,
   },
-
-  {
-    "windwp/nvim-autopairs",
-    enable = false,
-  },
 }
