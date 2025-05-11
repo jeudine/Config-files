@@ -35,7 +35,7 @@ WINIT_X11_SCALE_FACTOR = "1.0"
 decorations = "none"
 
 [font]
-size = 15
+size = 20
 
 [font.bold]
 family = "firacode"
