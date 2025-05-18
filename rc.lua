@@ -54,7 +54,7 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
-beautiful.font = "Sans 15"
+beautiful.font = "Sans 12"
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
@@ -610,3 +610,6 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+local xresources = require("beautiful.xresources")
+xresources.set_dpi(192) -- adjust as needed
