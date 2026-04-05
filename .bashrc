@@ -108,3 +108,5 @@ source "$HOME/.cargo/env"
 export PATH=/opt/nvim-linux64/bin:$PATH
 export PATH=/home/julien/.local/bin:$PATH
 export PATH=/home/julien/pip/bin:$PATH
+
+source ~/.env
