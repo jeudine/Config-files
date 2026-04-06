@@ -23,7 +23,7 @@ api_timeout = 720.0
 auto_compact_threshold = 200000
 tool_paths = []
 enabled_tools = []
-disabled_tools = []
+disabled_tools = ["web_search"]
 agent_paths = []
 enabled_agents = []
 disabled_agents = []
@@ -31,6 +31,14 @@ installed_agents = []
 skill_paths = []
 enabled_skills = []
 disabled_skills = []
+
+[[mcp_servers]]
+name = "exa"
+transport = "http"
+url = "https://mcp.exa.ai/mcp"
+
+[tools.exa_web_search_exa]
+permission = "always"
 
 [[providers]]
 name = "mistral"
@@ -115,7 +123,7 @@ default_commit_count = 5
 timeout_seconds = 2.0
 
 [session_logging]
-save_dir = "/home/julien/Config-files/.vibe/logs/session"
+save_dir = "~/.vibe/logs/session"
 session_prefix = "session"
 enabled = true
 
@@ -288,16 +296,3 @@ permission = "always"
 allowlist = []
 denylist = []
 sensitive_patterns = []
-
-[tools.web_search]
-permission = "ask"
-allowlist = []
-denylist = []
-sensitive_patterns = []
-timeout = 120
-model = "mistral-vibe-cli-with-tools"
-
-[[mcp_servers]]
-name = "exa"
-transport = "http"
-url = "https://mcp.exa.ai/mcp"
