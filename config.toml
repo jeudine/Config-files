@@ -61,7 +61,7 @@ project_id = ""
 region = ""
 
 [[models]]
-name = "mistral-vibe-cli-latest"
+name = "devstral-2512"
 provider = "mistral"
 alias = "devstral-2"
 temperature = 0.2
